@@ -1,6 +1,6 @@
 version: 2.1
 jobs:
-  build:
+  syntax_check:
     docker:
       - image: circleci/node:latest
     working_directory: ~/ToC1Kwin
@@ -13,6 +13,8 @@ jobs:
       - run:
           name: JavaScript syntax check
           command: npx eslint ./**/*.js
+          env:
+            - "NODE_OPTIONS=--require eslint-plugin-jquery"
       - run:
           name: CSS syntax check
           command: npx stylelint ./**/*.css
@@ -21,7 +23,7 @@ workflows:
   version: 2
   build:
     jobs:
-      - build:
+      - syntax_check:
           filters:
             branches:
               ignore:
