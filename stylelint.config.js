@@ -3,7 +3,7 @@ module.exports = {
     "color-no-invalid-hex": true,
     "declaration-colon-space-after": "always",
     "declaration-colon-space-before": "never",
-    indentation: 2,
+    indentation: 4,
     "max-empty-lines": 2,
     "rule-empty-line-before": [
       "always",
