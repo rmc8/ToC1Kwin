@@ -18,7 +18,6 @@ jobs:
       - run:
           name: CSS syntax check
           command: npx stylelint ./**/*.css
-
 workflows:
   version: 2
   build:

@@ -6,8 +6,8 @@ overrides: []
 parserOptions:
   ecmaVersion: latest
   sourceType: module
+plugins:
+  - jquery
 rules:
   "no-undef": ["error", { "typeof": false }]
   "jquery/no-undef": "error"
-plugins:
-  - jquery
