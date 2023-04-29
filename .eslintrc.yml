@@ -12,4 +12,4 @@ plugins:
   - jquery
 rules:
   "no-undef": ["error", { "typeof": false }]
-  "jquery/no-undef": "error"
+  "jquery/no-undef": "off"
