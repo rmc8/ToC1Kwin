@@ -1,11 +1,24 @@
 {
-    "name": "ToC1Kwin",
-    "version": "1.0.0",
-    "description": "",
-    "main": "index.js",
-    "scripts": {
-      "test": "echo \"Error: no test specified\" && exit 1"
-    },
-    "author": "",
-    "license": "ISC"
+  "name": "toc1kwin",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rmc8/ToC1Kwin.git"
+  },
+  "keywords": [],
+  "bugs": {
+    "url": "https://github.com/rmc8/ToC1Kwin/issues"
+  },
+  "homepage": "https://github.com/rmc8/ToC1Kwin#readme",
+  "devDependencies": {
+    "eslint": "^8.39.0",
+    "stylelint": "^15.6.0"
   }
+}
