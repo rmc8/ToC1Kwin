@@ -1,5 +1,26 @@
 version: 2.1
 jobs:
+  readme:
+    docker:
+      - image: mikohei/textlint:latest
+    working_directory: ~/ToC1Kwin
+    steps:
+      - checkout
+      - run:
+          name: Install dependencies
+          command: |
+            npm install -g textlint
+            npm install -g @textlint-rule/preset-ja-technical-writing
+            npm install -g @textlint-rule/preset-ja-spacing
+            npm install -g @textlint-rule/spellcheck-tech-word
+            npm install -g textlint-rule-preset-jtf-style
+      - run:
+          name: Check README.md
+          command: |
+            textlint --preset ja-technical-writing README.md
+            textlint --preset preset-ja-spacing README.md
+            textlint --rule spellcheck-tech-word README.md
+            textlint --preset textlint-rule-preset-jtf-style README.md
   syntax_check:
     docker:
       - image: circleci/node:latest
@@ -22,6 +43,11 @@ workflows:
   version: 2
   build:
     jobs:
+      - readme:
+          filters:
+            branches:
+              ignore:
+                - main
       - syntax_check:
           filters:
             branches:
