@@ -3,17 +3,8 @@ jobs:
   readme:
     docker:
       - image: mikohei/textlint:latest
-    working_directory: ~/ToC1Kwin
     steps:
       - checkout
-      - run:
-          name: Install dependencies
-          command: |
-            npm install -g textlint
-            npm install -g @textlint-rule/preset-ja-technical-writing
-            npm install -g @textlint-rule/preset-ja-spacing
-            npm install -g @textlint-rule/spellcheck-tech-word
-            npm install -g textlint-rule-preset-jtf-style
       - run:
           name: Check README.md
           command: |
@@ -24,7 +15,6 @@ jobs:
   syntax_check:
     docker:
       - image: circleci/node:latest
-    working_directory: ~/ToC1Kwin
     steps:
       - checkout
       - run: npm install
@@ -48,8 +38,10 @@ workflows:
             branches:
               ignore:
                 - main
+          working_directory: ~/ToC1Kwin
       - syntax_check:
           filters:
             branches:
               ignore:
                 - main
+          working_directory: ~/ToC1Kwin
