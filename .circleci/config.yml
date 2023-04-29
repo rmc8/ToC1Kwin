@@ -3,6 +3,7 @@ jobs:
   readme:
     docker:
       - image: mikohei/textlint:latest
+    working_directory: ~/ToC1Kwin
     steps:
       - checkout
       - run:
@@ -15,6 +16,7 @@ jobs:
   syntax_check:
     docker:
       - image: circleci/node:latest
+    working_directory: ~/ToC1Kwin
     steps:
       - checkout
       - run: npm install
@@ -38,10 +40,8 @@ workflows:
             branches:
               ignore:
                 - main
-          working_directory: ~/ToC1Kwin
       - syntax_check:
           filters:
             branches:
               ignore:
                 - main
-          working_directory: ~/ToC1Kwin
