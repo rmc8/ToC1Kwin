@@ -14,5 +14,6 @@ module.exports = {
     ],
     "selector-list-comma-newline-after": "always-multi-line",
     "selector-no-id": true,
+    "selector-max-id": 4,
   },
 };
