@@ -9,3 +9,5 @@ parserOptions:
 rules:
   "no-undef": ["error", { "typeof": false }]
   "jquery/no-undef": "error"
+plugins:
+  - jquery
