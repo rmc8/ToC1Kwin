@@ -10,4 +10,4 @@ rules:
   "no-undef": ["error", { "typeof": false }]
   "jquery/no-undef": "error"
 plugins:
-  - eslint-plugin-jquery
+  - jquery
