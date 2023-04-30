@@ -19,6 +19,7 @@
         <ul>
           <li><a href="#about">About</a></li>
           <li><a href="#work">Project</a></li>
+          <li><a href="#links">Links</a></li>
         </ul>
       </nav>
     </div>
@@ -66,6 +67,12 @@
         </ul>
       </div>
     </section>
+    <section id="links">
+      <div class="container">
+        <h2>Links</h2>
+        <div id="app"></div>
+      </div>
+    </section>
   </main>
   <footer>
     <div class="container">
@@ -74,6 +81,49 @@
   </footer>
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="js/script.js"></script>
+  <script src="https://unpkg.com/svelte@3.38.3/dist/svelte.min.js"></script>
+  <script>
+    // リンク情報
+    const links = [
+      {
+        label: 'Google',
+        url: 'https://www.google.com/',
+        icon: 'https://www.google.com/favicon.ico'
+      },
+      {
+        label: 'Twitter',
+        url: 'https://twitter.com/',
+        icon: 'https://abs.twimg.com/favicons/twitter.ico'
+      },
+      {
+        label: 'GitHub',
+        url: 'https://github.com/',
+        icon: 'https://github.githubassets.com/favicon.ico'
+      }
+    ];
+
+    // リンク集コンポーネント
+    const Links = ({ links }) => {
+      return (
+        <div class="links">
+          {links.map(link => (
+            <a href={link.url} target="_blank" rel="noopener noreferrer" class="link">
+              <div class="icon" style={`background-image: url(${link.icon})`}></div>
+              <div class="label">{link.label}</div>
+            </a>
+          ))}
+        </div>
+      );
+    };
+
+    // リンク集コンポーネントをレンダリング
+    const app = new Links({
+      target: document.querySelector('#app'),
+      props: {
+        links
+      }
+    });
+  </script>
 </body>
 
 </html>
