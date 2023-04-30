@@ -71,11 +71,12 @@
     <section id="links">
       <div class="container">
         <h2>Links</h2>
-        <ul class="link-list">
-          <li v-for="link in links">
-            <a :href="link.url" class="link-item">{{ link.name }}</a>
-          </li>
-        </ul>
+        <div class="links">
+          <a v-for="link in links" :href="link.url" target="_blank" rel="noopener noreferrer" class="link">
+            <div class="icon" :style="'background-image: url(' + link.icon + ')'"></div>
+            <div class="label">{{ link.label }}</div>
+          </a>
+        </div>
       </div>
     </section>
   </main>
@@ -91,9 +92,21 @@
       el: "#links",
       data: {
         links: [
-          { name: "Google", url: "https://www.google.com/" },
-          { name: "Twitter", url: "https://twitter.com/" },
-          { name: "GitHub", url: "https://github.com/" }
+          {
+            label: 'Google',
+            url: 'https://www.google.com/',
+            icon: 'https://www.google.com/favicon.ico'
+          },
+          {
+            label: 'Twitter',
+            url: 'https://twitter.com/',
+            icon: 'https://abs.twimg.com/favicons/twitter.ico'
+          },
+          {
+            label: 'GitHub',
+            url: 'https://github.com/',
+            icon: 'https://github.githubassets.com/favicon.ico'
+          }
         ]
       }
     });
