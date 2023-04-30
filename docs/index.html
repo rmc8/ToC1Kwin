@@ -70,60 +70,65 @@
     <section id="links">
       <div class="container">
         <h2>Links</h2>
-        <div id="app"></div>
+        <div id="app" class="links"></div>
       </div>
     </section>
-  </main>
-  <footer>
-    <div class="container">
-      <p>&copy; K(@ToC1Kwin) 2023</p>
-    </div>
-  </footer>
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script src="js/script.js"></script>
-  <script src="https://unpkg.com/svelte@3.38.3/dist/svelte.min.js"></script>
-  <script>
-    // リンク情報
-    const links = [
-      {
-        label: 'Google',
-        url: 'https://www.google.com/',
-        icon: 'https://www.google.com/favicon.ico'
-      },
-      {
-        label: 'Twitter',
-        url: 'https://twitter.com/',
-        icon: 'https://abs.twimg.com/favicons/twitter.ico'
-      },
-      {
-        label: 'GitHub',
-        url: 'https://github.com/',
-        icon: 'https://github.githubassets.com/favicon.ico'
-      }
-    ];
+    <script>
+      // リンク情報
+      const links = [
+        {
+          label: 'Google',
+          url: 'https://www.google.com/',
+          icon: 'https://www.google.com/favicon.ico'
+        },
+        {
+          label: 'Twitter',
+          url: 'https://twitter.com/',
+          icon: 'https://abs.twimg.com/favicons/twitter.ico'
+        },
+        {
+          label: 'GitHub',
+          url: 'https://github.com/',
+          icon: 'https://github.githubassets.com/favicon.ico'
+        }
+      ];
 
-    // リンク集コンポーネント
-    const Links = ({ links }) => {
-      return (
-        <div class="links">
-          {links.map(link => (
-            <a href={link.url} target="_blank" rel="noopener noreferrer" class="link">
-              <div class="icon" style={`background-image: url(${link.icon})`}></div>
-              <div class="label">{link.label}</div>
-            </a>
-          ))}
-        </div>
-      );
-    };
+      // リンク要素の生成
+      const createLinkElement = ({ label, url, icon }) => {
+        const link = document.createElement('a');
+        link.href = url;
+        link.target = '_blank';
+        link.rel = 'noopener noreferrer';
+        link.className = 'link';
 
-    // リンク集コンポーネントをレンダリング
-    const app = new Links({
-      target: document.querySelector('#app'),
-      props: {
-        links
-      }
-    });
-  </script>
+        const iconElement = document.createElement('div');
+        iconElement.className = 'icon';
+        iconElement.style.backgroundImage = `url(${icon})`;
+        link.appendChild(iconElement);
+
+        const labelElement = document.createElement('div');
+        labelElement.className = 'label';
+        labelElement.textContent = label;
+        link.appendChild(labelElement);
+
+        return link;
+      };
+
+      // リンク集要素の生成
+      const createLinksElement = links => {
+        const linksElement = document.createElement('div');
+        linksElement.className = 'links';
+        links.forEach(link => {
+          const linkElement = createLinkElement(link);
+          linksElement.appendChild(linkElement);
+        });
+        return linksElement;
+      };
+
+      // リンク集要素をレンダリング
+      const linksElement = createLinksElement(links);
+      document.getElementById('app').appendChild(linksElement);
+    </script>
 </body>
 
 </html>
