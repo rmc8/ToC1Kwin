@@ -72,7 +72,6 @@
       <div class="container">
         <h2>Links</h2>
         <div class="links">
-          <div class="lines"></div>
           <a v-for="link in links" :href="link.url" target="_blank" rel="noopener noreferrer" class="link">
             <div class="icon" :style="`background-image: url('${link.icon}')`"></div>
             <div class="label">{{ link.label }}</div>
@@ -94,18 +93,24 @@
       data: {
         links: [
           {
-            label: 'Google',
-            url: 'https://www.google.com/',
-            icon: 'https://www.google.com/favicon.ico'
-          },
-          {
-            label: 'Twitter',
-            url: 'https://twitter.com/',
+            label: '@ToC1Kwin',
+            url: 'https://twitter.com/ToC1Kwin',
             icon: 'https://abs.twimg.com/favicons/twitter.ico'
           },
           {
+            label: '@rmc_km',
+            url: 'https://twitter.com/rmc_km',
+            icon: 'https://abs.twimg.com/favicons/twitter.ico'
+          },
+          {
+            label: 'note',
+            url: 'https://note.com/toc1kwin',
+            icon: 'https://assets.st-note.com/poc-image/manual/note-common-images/production/svg/production.ico'
+          },
+
+          {
             label: 'GitHub',
-            url: 'https://github.com/',
+            url: 'https://github.com/rmc8/',
             icon: 'https://github.githubassets.com/favicon.ico'
           }
         ]
