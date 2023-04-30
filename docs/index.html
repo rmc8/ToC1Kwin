@@ -72,6 +72,7 @@
       <div class="container">
         <h2>Links</h2>
         <div class="links">
+          <div class="lines"></div>
           <a v-for="link in links" :href="link.url" target="_blank" rel="noopener noreferrer" class="link">
             <div class="icon" :style="`background-image: url('${link.icon}')`"></div>
             <div class="label">{{ link.label }}</div>
