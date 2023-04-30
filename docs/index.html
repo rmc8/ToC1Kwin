@@ -71,9 +71,9 @@
     <section id="links">
       <div class="container">
         <h2>Links</h2>
-        <ul>
+        <ul class="link-list">
           <li v-for="link in links">
-            <a :href="link.url">{{ link.name }}</a>
+            <a :href="link.url" class="link-item">{{ link.name }}</a>
           </li>
         </ul>
       </div>
