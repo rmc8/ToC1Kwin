@@ -157,3 +157,10 @@ footer>div>p {
     background-color: #333;
     color: #f7f7f7;
 }
+
+.icon {
+    width: 16px;
+    height: 16px;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
