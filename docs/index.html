@@ -9,6 +9,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.min.js"></script>
 </head>
 
 <body>
@@ -19,7 +20,7 @@
         <ul>
           <li><a href="#about">About</a></li>
           <li><a href="#work">Project</a></li>
-          <li><a href="#links">Links</a></li>
+          <li><a href="#work">Project</a></li>
         </ul>
       </nav>
     </div>
@@ -70,66 +71,33 @@
     <section id="links">
       <div class="container">
         <h2>Links</h2>
-        <div id="app" class="links"></div>
+        <ul>
+          <li v-for="link in links">
+            <a :href="link.url">{{ link.name }}</a>
+          </li>
+        </ul>
       </div>
     </section>
-    <script>
-      // リンク情報
-      const links = [
-        {
-          label: 'Google',
-          url: 'https://www.google.com/',
-          icon: 'https://www.google.com/favicon.ico'
-        },
-        {
-          label: 'Twitter',
-          url: 'https://twitter.com/',
-          icon: 'https://abs.twimg.com/favicons/twitter.ico'
-        },
-        {
-          label: 'GitHub',
-          url: 'https://github.com/',
-          icon: 'https://github.githubassets.com/favicon.ico'
-        }
-      ];
-
-      // リンク要素の生成
-      const createLinkElement = ({ label, url, icon }) => {
-        const link = document.createElement('a');
-        link.href = url;
-        link.target = '_blank';
-        link.rel = 'noopener noreferrer';
-        link.className = 'link';
-
-        const iconElement = document.createElement('div');
-        iconElement.className = 'icon';
-        iconElement.style.backgroundImage = `url(${icon})`;
-        link.appendChild(iconElement);
-
-        const labelElement = document.createElement('div');
-        labelElement.className = 'label';
-        labelElement.textContent = label;
-        link.appendChild(labelElement);
-
-        return link;
-      };
-
-      // リンク集要素の生成
-      const createLinksElement = links => {
-        const linksElement = document.createElement('div');
-        linksElement.className = 'links';
-        links.forEach(link => {
-          const linkElement = createLinkElement(link);
-          linksElement.appendChild(linkElement);
-        });
-        return linksElement;
-      };
-
-      // リンク集要素をレンダリング
-      const linksElement = createLinksElement(links);
-      document.getElementById('app').appendChild(linksElement);
-    </script>
   </main>
+  <footer>
+    <div class="container">
+      <p>&copy; K(@ToC1Kwin) 2023</p>
+    </div>
+  </footer>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="js/script.js"></script>
+  <script>
+    var app = new Vue({
+      el: "#links",
+      data: {
+        links: [
+          { name: "Google", url: "https://www.google.com/" },
+          { name: "Twitter", url: "https://twitter.com/" },
+          { name: "GitHub", url: "https://github.com/" }
+        ]
+      }
+    });
+  </script>
 </body>
 
 </html>
