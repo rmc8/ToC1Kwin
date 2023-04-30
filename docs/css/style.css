@@ -159,8 +159,20 @@ footer>div>p {
 }
 
 .icon {
-    width: 16px;
-    height: 16px;
+    width: 20px;
+    height: 20px;
     background-repeat: no-repeat;
     background-size: contain;
+}
+
+.links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.link {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
 }
