@@ -182,3 +182,8 @@ footer>div>p {
 .label {
     white-space: nowrap;
 }
+
+footer a {
+    color: #fff;
+    text-decoration: underline;
+}
