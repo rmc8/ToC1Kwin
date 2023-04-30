@@ -158,23 +158,20 @@ footer>div>p {
     color: #f7f7f7;
 }
 
-.icon {
-    width: 20px;
-    height: 20px;
-    background-repeat: no-repeat;
-    background-size: contain;
-}
-
 .links {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
 }
 
 .link {
     display: flex;
     align-items: center;
-    margin-bottom: 20px;
+}
+
+.icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 8px;
 }
 
 .label {
