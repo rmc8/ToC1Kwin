@@ -254,8 +254,9 @@ footer a:hover {
 
 ul.decoration li {
     position: relative;
-    padding-left: 25px;
-    margin-bottom: 15px;
+    padding-left: 24px;
+    margin-bottom: 16px;
+    margin-left:24px;
 }
 
 ul.decoration li:before {
@@ -263,5 +264,5 @@ ul.decoration li:before {
     position: absolute;
     top: 0;
     left: 0;
-    background-color: var(--accent-color-light);
+    color: var(--accent-color-light);
 }
