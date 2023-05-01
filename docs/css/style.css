@@ -18,19 +18,20 @@ body {
 
 blockquote {
     position: relative;
-    padding: 10px 15px 10px 32px;
+    padding: 24px 15px 10px 0;
     box-sizing: border-box;
     font-style: italic;
-    border: solid 5px #dddddd;
+    border: solid 5px #e4e4e4;
     color: #464646;
     white-space: pre-wrap;
+    margin-bottom: 32px;
 }
 
-blockquote:before{
+blockquote:before {
     display: inline-block;
     position: absolute;
     top: 10px;
-    left: 0;
+    left: 10px;
     content: "“";
     font-family: sans-serif;
     color: var(--accent-color-light);
