@@ -9,71 +9,189 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css" />
+  <link rel="apple-touch-icon" sizes="180x180" href="icon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="icon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="icon/favicon-16x16.png">
+  <link rel="manifest" href="icon/site.webmanifest">
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="js/script.js"></script>
 </head>
 
 <body>
   <header>
     <div class="container">
-      <h1>Profile</h1>
+      <!-- <h1>Profile</h1> -->
       <nav>
         <ul>
-          <li><a href="#about">自己紹介</a></li>
-          <li><a href="#work">Project</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#prsk">Sekai</a></li>
+          <li><a href="#hobby">Hobby</a></li>
+          <li><a href="#links">Links</a></li>
         </ul>
       </nav>
     </div>
   </header>
   <main>
+    <section id="profile">
+      <div class="profile-icon">
+        <img src="icon/twi.jpg" class="twitter_icon" alt="TwitterIcon">
+      </div>
+      <h2 class="user_name">K</h2>
+      <p><img src="icon/discord-mark-blue-icon.png" alt="DiscordIcon" class="discord_icon">うみつばめ#3333</p>
+    </section>
     <section id="about">
       <div class="container">
-        <h2>自己紹介</h2>
+        <h2>About</h2>
         <p>
-          はじめまして。私はK(@ToC1Kwin)と申します。サンフランシスコ在住のソフトウェアエンジニアです。複雑な問題に対してクリーンでエレガントなソリューションを作り出すことが好きです。
-        </p>
-        <p>
-          私の趣味は読書、ハイキング、そして市内の新しいレストランに行くことです。
+          はじめまして。Kと申します。プロセカでおまかせしたり連勝したりすることが好きです。スタンプ押しながらまったりご一緒できましたらうれしいです！
         </p>
       </div>
     </section>
-    <section id="work">
+    <section id="prsk">
       <div class="container">
-        <h2>Contents</h2>
+        <h2>Project Sekai</h2>
         <ul>
           <li>
-            <h3>Project1</h3>
+            <h3>ツイ募</h3>
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam
-              euismod tortor sit amet nibh luctus, a efficitur dolor
-              consectetur.
+              普段は36万編成で☆4募集を以下のようにしています。気持ち的にはだれでもご一緒したいのですが集まりが悪くなってしまうためやむを得ず☆4にしております。SFもとくに気にせず適当に叩きながらスタンプをひたすら連打しているので、気楽にご一緒できましたらうれしいです！
+            </p>
+            <h4>マラソンイベ</h4>
+            <blockquote>
+              おまかせ(選曲○)【{number}】＠４<br>
+              主：36万/N%　募：☆４<br>
+              #プロセカ募集 #プロセカ協力<br>
+            </blockquote>
+            <h4>チアフルイベ</h4>
+            <blockquote>
+              {team}【{number}】＠４<br>
+              主：36万/N%　募：☆４<br>
+              #プロセカ募集 #プロセカ協力<br>
+            </blockquote>
+          </li>
+          <li>
+            <h3>支援編成</h3>
+            <p>
+              ツイ募支援が多めですがお声がけくださいましたらDiscordの周回にもお邪魔します。連勝用であればいろいろな総合力の調整に対応できます。
+            <ul class="decoration">
+              <li>150/690/36.3(P1)</li>
+              <li>150/730/33.0(P1, L1)</li>
+              <li>150/680/19.3(Lv50の回復スキルマもあります)</li>
+            </ul>
             </p>
           </li>
           <li>
-            <h3>Project2</h3>
+            <h3>連勝</h3>
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam
-              euismod tortor sit amet nibh luctus, a efficitur dolor
-              consectetur.
+              チアフルカーニバルイベントで固定メンバーやツイ募などでまったり連勝しています。1000連勝以上を目指した大型連勝も14か月しており1120連勝まで歩みを進められました。これからもツイボで色々な方々と連勝しながらときどき大型も楽しみたいです。以下は300連勝以上の記録です。
+            <ul class="decoration">
+              <li>金魚グループ「株式会社スイミーグループ」1120連勝</li>
+              <li>しょうゆグループ「fantasista」816連勝</li>
+              <li>みどりぷよグループ「fantasista」500連勝</li>
+              <li>サッカーグループ「浅瀬を遊泳中のニモ」456連勝</li>
+              <li>しっとりした曲グループ「もういちど希望をみんなに！」399連勝</li>
+              <li>山グループ「Quintet」350連勝</li>
+              <li>金魚グループ「株式会社スイミーグループ」319連勝</li>
+              <li>金魚グループ「株式会社スイミーグループ」307連勝</li>
+              <li>お化け屋敷グループ「歌うよ！」302連勝</li>
+              <li>ミルクグループ「ミルタンクが倒せない」301連勝</li>
+            </ul>
             </p>
           </li>
           <li>
-            <h3>Project3</h3>
+            <h3>イベラン</h3>
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam
-              euismod tortor sit amet nibh luctus, a efficitur dolor
-              consectetur.
+              ほぼほぼツイボランでTwitterのTLをたびたび賑わせておりますが楽しくご一緒いただいてありがとうございます！
+            <ul class="decoration">
+              <li>青空に願うユア・ハピネス！ 4位</li>
+              <li>MOREMOREMakingXmas 5位</li>
+              <li>POP IN MY HEART!! 13位</li>
+              <li>ハッピー・ラブリー・エブリデイ！ 23位</li>
+              <li>Legend still vivid 32位</li>
+              <li>Walk on and on 43位</li>
+              <li>Cast Spell on You 62位</li>
+              <li>お悩み聞かせて！わくわくピクニック 72位</li>
+              <li>TOP200~TOP1000 22回</li>
+            </ul>
             </p>
           </li>
         </ul>
       </div>
     </section>
+    <section id="hobby">
+      <div class="container">
+        <h2>Hobby</h2>
+        <p>
+          書ききれないぐらいに趣味がありますが4つ書きます。
+        </p>
+        <ul>
+          <li>
+            <h3>Coffee</h3>
+            <p>
+              自宅で豆を焼いて挽いて飲むぐらいにはコーヒーが好きです。苦みや酸味・甘味・香りのバランスを考えて焼いたり、ブレンドして味のバランスを整えたり、いれ方を変えて味変したりで意外と奥が深いです。豆を選ぶ瞬間からコーヒーの楽しみが広がっていて長いこと楽しんでいます。メインはコーヒーですがお茶も好きで紅茶・緑茶・ブレンドなど国内外を問わずにいろいろと取り寄せて楽しんでいます。
+            </p>
+          </li>
+          <li>
+            <h3>Stationery</h3>
+            <p>
+              長時間の勉強や書写が好きで文房具にこっています。万年筆やガラスペンが好きでインク集めて勉強だったり趣味だったりでのんびり文字を書いています。ちなみに文字を書くときは左利きです。手から伝わる滑らかな感触やインクの色・匂い、文字や絵から得られる刺激や知識がいつまで経っても飽きないですし、実用性もあるので気に入っている趣味の1つです。
+            </p>
+          </li>
+          <li>
+            <h3>Programming</h3>
+            <p>
+              プログラムを書くのが好きで、Discord用のBotも作っています。得意な言語はPythonで、他にもHTMLやJavaScript、Rustなどもお遊び程度に使っています。お仕事でもプログラムを書いていて簡単なWebアプリの構築やデータ分析、学習モデルの構築、めんどくさい作業の自動化とかとても好きです。お仕事以外だとGoogle
+              Apps Scriptでもよく遊んでいます。Discordでプログラミングをする開発鯖もあるのでご興味のある方はぜひお声がけください。
+            </p>
+          </li>
+          <li>
+            <h3>Audio</h3>
+            <p>
+              一番長く続いている趣味だと思います。イヤホン・ヘッドホン・スピーカーとなんでも好きで、イヤホン自体をつくったり、アンプやケーブルを作ったりしながら音響システム全体の音を整えていくのがいつまでたっても終わりがなく楽しめます。音楽を聴くこと自体もとても楽しいですが、1つの音楽でも音や音楽の表現が変わって何度聞いても楽しい気持ちになれます。とても長く続けていても新しい発見が音楽にも機材側にもでてくるので手をかけることがやめられません。
+            </p>
+          </li>
+          <li>
+            <h3>Fragrance</h3>
+            <p>
+              コーヒーと同様に匂いが好きなので意外とハマっている趣味です。といいつつご存じの通り香水は匂いやクセが強いものもあって私自身もそのあたりのものだったり、電車で遠くからも香るような強烈な感じだったりは得意ではないです。なので、やわらかく瑞々しく香る傾向のあるアクアディパルマの製品に好みが偏りがちです。
+            </p>
+          </li>
+        </ul>
+      </div>
+    </section>
+    <section id="links">
+      <div class="container">
+        <h2>Links</h2>
+        <div class="links">
+          <a v-for="link in links" :href="link.url" target="_blank" rel="noopener noreferrer" class="link">
+            <div class="icon" :style="`background-image: url('${link.icon}')`"></div>
+            <div class="label">{{ link.label }}</div>
+          </a>
+        </div>
+      </div>
+    </section>
   </main>
   <footer>
     <div class="container">
-      <p>&copy; K(@ToC1Kwin) 2023</p>
+      <p>&copy; K(@ToC1Kwin) 2023 | <a href="https://github.com/rmc8/ToC1Kwin">Repository</a></p>
     </div>
   </footer>
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script src="js/script.js"></script>
+  <script>
+    let app = new Vue({
+      el: "#links",
+      data: {
+        links: [],
+      },
+      mounted() {
+        axios
+          .get("json/links.json")
+          .then(response => (this.links = response.data))
+          .catch(error => console.log(error))
+      }
+    });
+  </script>
 </body>
 
 </html>
