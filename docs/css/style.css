@@ -1,6 +1,6 @@
 :root {
     --accent-color_dark: #0c323c;
-    --accent-color-light: #23a0ae;
+    --accent-color-light: #24aab3;
 }
 
 * {
@@ -12,6 +12,7 @@
 body {
     font-family: 'Noto Sans JP', sans-serif;
     line-height: 1.6;
+    color: #0f4e63;
 }
 
 ul {
@@ -20,11 +21,11 @@ ul {
 
 a {
     text-decoration: none;
-    color: var(--accent-color_dark);
+    color: var(--accent-color-light);
 }
 
 a:hover {
-    color: var(--accent-color-light);
+    color: var(--accent-color-dark);
 }
 
 header {
