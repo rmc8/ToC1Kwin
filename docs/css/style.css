@@ -1,4 +1,7 @@
-/* Reset styles */
+:root {
+    --accent-color: #23a0ae;
+}
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -16,7 +19,7 @@ ul {
 
 a {
     text-decoration: none;
-    color: #333;
+    color: var(--accent-color);
 }
 
 header {
@@ -54,10 +57,18 @@ nav ul li a {
     padding: 5px 10px;
     border-radius: 5px;
     transition: background-color 0.2s ease-in-out;
+    color: var(--text-color);
 }
 
 nav ul li a:hover {
     background-color: #eee;
+}
+
+nav ul li a:hover,
+input[type="submit"]:hover,
+.link-item:hover {
+    background-color: var(--accent-color);
+    color: #fff;
 }
 
 main {
@@ -177,6 +188,7 @@ footer>div>p {
     height: 20px;
     margin-right: 4px;
     background-repeat: no-repeat;
+    background-color: var(--accent-color);
     background-size: contain;
 }
 
