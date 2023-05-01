@@ -18,12 +18,11 @@ body {
 
 blockquote {
     position: relative;
-    padding: 24px 15px 10px 0;
+    padding: 56px 16px 16px 16px;
     box-sizing: border-box;
     font-style: italic;
     border: solid 5px #e4e4e4;
     color: #464646;
-    white-space: pre-wrap;
     margin-bottom: 32px;
     background-image: url('../icon/blockquote_icon_s.png');
     background-repeat: no-repeat;
