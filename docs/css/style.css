@@ -220,7 +220,7 @@ footer a:hover {
     margin-bottom: 10px;
 }
 
-#profile h3 {
+#profile h2.user_name {
     font-size: 24px;
     font-weight: 500;
     margin: 0;
@@ -234,13 +234,12 @@ footer a:hover {
 .profile-icon {
     display: inline-block;
     vertical-align: middle;
-    width: 20px;
-    height: 20px;
     margin-right: 5px;
 }
 
-.profile-icon img {
-    width: 100%;
-    height: 100%;
+.discord_icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
     object-fit: contain;
 }
