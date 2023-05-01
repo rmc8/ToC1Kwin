@@ -242,6 +242,6 @@ footer a:hover {
     height: 20px;
     margin-right: 5px;
     object-fit: contain;
-    display: flex;
-    align-items: center;
+    display: inline-block;
+    margin-bottom: 4px;
 }
