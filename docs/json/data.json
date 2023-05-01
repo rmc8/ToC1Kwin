@@ -1,0 +1,46 @@
+{
+  "hobbies": [
+    {
+      "title": "Coffee",
+      "description": "自宅で豆を焼いて挽いて飲むぐらいにはコーヒーが好きです。苦みや酸味・甘味・香りのバランスを考えて焼いたり、ブレンドして味のバランスを整えたり、いれ方を変えて味変したりで意外と奥が深いです。豆を選ぶ瞬間からコーヒーの楽しみが広がっていて長いこと楽しんでいます。メインはコーヒーですがお茶も好きで紅茶・緑茶・ブレンドなど国内外を問わずにいろいろと取り寄せて楽しんでいます。"
+    },
+    {
+      "title": "Stationery",
+      "description": "長時間の勉強や書写が好きで文房具にこっています。万年筆やガラスペンが好きでインク集めて勉強だったり趣味だったりでのんびり文字を書いています。ちなみに文字を書くときは左利きです。手から伝わる滑らかな感触やインクの色・匂い、文字や絵から得られる刺激や知識がいつまで経っても飽きないですし、実用性もあるので気に入っている趣味の1つです。"
+    },
+    {
+      "title": "Programming",
+      "description": "プログラムを書くのが好きで、Discord用のBotも作っています。得意な言語はPythonで、他にもHTMLやJavaScript、Rustなどもお遊び程度に使っています。お仕事でもプログラムを書いていて簡単なWebアプリの構築やデータ分析、学習モデルの構築、めんどくさい作業の自動化とかとても好きです。お仕事以外だとGoogle Apps Scriptでもよく遊んでいます。Discordでプログラミングをする開発鯖もあるのでご興味のある方はぜひお声がけください。"
+    },
+    {
+      "title": "Audio",
+      "description": "一番長く続いている趣味だと思います。イヤホン・ヘッドホン・スピーカーとなんでも好きで、イヤホン自体をつくったり、アンプやケーブルを作ったりしながら音響システム全体の音を整えていくのがいつまでたっても終わりがなく楽しめます。音楽を聴くこと自体もとても楽しいですが、1つの音楽でも音や音楽の表現が変わって何度聞いても楽しい気持ちになれます。とても長く続けていても新しい発見が音楽にも機材側にもでてくるので手をかけることがやめられません。"
+    },
+    {
+      "title": "Fragrance",
+      "description": "コーヒーと同様に匂いが好きなので意外とハマっている趣味です。といいつつご存じの通り香水は匂いやクセが強いものもあって私自身もそのあたりのものだったり、電車で遠くからも香るような強烈な感じだったりは得意ではないです。なので、やわらかく瑞々しく香る傾向のあるアクアディパルマの製品に好みが偏りがちです。"
+    }
+  ],
+  "links": [
+    {
+      "label": "@ToC1Kwin",
+      "url": "https://twitter.com/ToC1Kwin",
+      "icon": "https://abs.twimg.com/favicons/twitter.ico"
+    },
+    {
+      "label": "@rmc_km",
+      "url": "https://twitter.com/rmc_km",
+      "icon": "https://abs.twimg.com/favicons/twitter.ico"
+    },
+    {
+      "label": "GitHub",
+      "url": "https://github.com/rmc8/",
+      "icon": "https://github.githubassets.com/favicon.ico"
+    },
+    {
+      "label": "note",
+      "url": "https://note.com/toc1kwin",
+      "icon": "https://assets.st-note.com/poc-image/manual/note-common-images/production/svg/production.ico"
+    }
+  ]
+}

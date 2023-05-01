@@ -19,7 +19,7 @@
   <script src="js/script.js"></script>
 </head>
 
-<body>
+<body id="app">
   <header>
     <div class="container">
       <!-- <h1>Profile</h1> -->
@@ -154,28 +154,19 @@
     </div>
   </footer>
   <script>
-    let app2 = new Vue({
-      el: "#hobby",
+    let app = new Vue({
+      el: "app",
       data: {
+        links: [],
         hobbies: [],
       },
       mounted() {
         axios
-          .get("json/hobbies.json")
-          .then(response => (this.hobbies = response.data))
-          .catch(error => console.log(error))
-      }
-    });
-
-    let app1 = new Vue({
-      el: "#links",
-      data: {
-        links: [],
-      },
-      mounted() {
-        axios
-          .get("json/links.json")
-          .then(response => (this.links = response.data))
+          .get("json/data.json")
+          .then(response => {
+            this.links = response.data.links;
+            this.hobbies = response.data.hobbies;
+          })
           .catch(error => console.log(error))
       }
     });
