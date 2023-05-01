@@ -164,8 +164,8 @@
         axios
           .get("json/data.json")
           .then(response => {
-            this.links = response.data.links;
-            this.hobbies = response.data.hobbies;
+            this.links = response.links;
+            this.hobbies = response.hobbies;
           })
           .catch(error => console.log(error))
       }
