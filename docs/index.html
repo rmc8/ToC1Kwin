@@ -154,10 +154,11 @@
     </div>
   </footer>
   <script>
-    let app = new Vue({
-      el: "#app",
-      data: {
-        contents: [],
+    let app = Vue.createApp({
+      data() {
+        return {
+          contents: [],
+        }
       },
       mounted() {
         axios
@@ -167,7 +168,7 @@
           })
           .catch(error => console.log(error))
       }
-    });
+    }).mount('#app');
   </script>
 </body>
 
