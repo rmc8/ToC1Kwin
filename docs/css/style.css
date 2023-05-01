@@ -25,18 +25,8 @@ blockquote {
     color: #464646;
     white-space: pre-wrap;
     margin-bottom: 32px;
-}
-
-blockquote:before {
-    display: inline-block;
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    content: "“";
-    font-family: sans-serif;
-    color: var(--accent-color-light);
-    font-size: 90px;
-    line-height: 1;
+    background-image: url('../icon/blockquote_icon.png');
+    background-repeat: no-repeat;
 }
 
 blockquote p {
