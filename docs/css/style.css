@@ -12,7 +12,8 @@
 body {
     font-family: 'Noto Sans JP', sans-serif;
     line-height: 1.6;
-    color: #0f4e63;
+    color: #222;
+    background-color: #eeeeee;
 }
 
 ul {
