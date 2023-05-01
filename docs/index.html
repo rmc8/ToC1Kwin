@@ -14,6 +14,9 @@
   <link rel="icon" type="image/png" sizes="16x16" href="icon/favicon-16x16.png">
   <link rel="manifest" href="icon/site.webmanifest">
   <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="js/script.js"></script>
 </head>
 
 <body>
@@ -100,8 +103,35 @@
       <p>&copy; K(@ToC1Kwin) 2023 | <a href="https://github.com/rmc8/ToC1Kwin">Repository</a></p>
     </div>
   </footer>
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script src="js/script.js"></script>
+  <script>
+    let app = new Vue({
+      el: "#links",
+      data: {
+        links: [
+          {
+            label: "@ToC1Kwin",
+            url: "https://twitter.com/ToC1Kwin",
+            icon: "https://abs.twimg.com/favicons/twitter.ico",
+          },
+          {
+            label: "@rmc_km",
+            url: "https://twitter.com/rmc_km",
+            icon: "https://abs.twimg.com/favicons/twitter.ico",
+          },
+          {
+            label: "GitHub",
+            url: "https://github.com/rmc8/",
+            icon: "https://github.githubassets.com/favicon.ico",
+          },
+          {
+            label: "note",
+            url: "https://note.com/toc1kwin",
+            icon: "https://assets.st-note.com/poc-image/manual/note-common-images/production/svg/production.ico",
+          },
+        ],
+      },
+    });
+  </script>
 </body>
 
 </html>
