@@ -127,7 +127,7 @@
           書ききれないぐらいに趣味がありますが5つ書きます。
         </p>
         <ul>
-          <li v-for="hobby in hobbies">
+          <li v-for="hobby in contents.hobbies">
             <h3>{{ hobby.title }}</h3>
             <p>
               {{ hobby.description }}
@@ -140,7 +140,7 @@
       <div class="container">
         <h2>Links</h2>
         <div class="links">
-          <a v-for="link in links" :href="link.url" target="_blank" rel="noopener noreferrer" class="link">
+          <a v-for="link in contents.links" :href="link.url" target="_blank" rel="noopener noreferrer" class="link">
             <div class="icon" :style="`background-image: url('${link.icon}')`"></div>
             <div class="label">{{ link.label }}</div>
           </a>
@@ -157,15 +157,13 @@
     let app = new Vue({
       el: "#app",
       data: {
-        links: [],
-        hobbies: [],
+        contents: [],
       },
       mounted() {
         axios
           .get("json/data.json")
           .then(response => {
-            this.links = response.data.links;
-            this.hobbies = response.data.hobbies;
+            this.contents = response.data;
           })
           .catch(error => console.log(error))
       }
