@@ -23,6 +23,7 @@ blockquote {
     font-style: italic;
     border: solid 2px #464646;
     color: #464646;
+    white-space: pre-wrap;
 }
 
 blockquote:before{
