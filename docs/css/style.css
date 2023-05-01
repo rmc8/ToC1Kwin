@@ -1,5 +1,6 @@
 :root {
-    --accent-color: #23a0ae;
+    --accent-color_dark: #0c323c;
+    --accent-color-light: #23a0ae;
 }
 
 * {
@@ -19,7 +20,11 @@ ul {
 
 a {
     text-decoration: none;
-    color: var(--accent-color);
+    color: var(--accent-color_dark);
+}
+
+a:hover {
+    color: var(--accent-color-light);
 }
 
 header {
@@ -60,14 +65,11 @@ nav ul li a {
     color: var(--text-color);
 }
 
-nav ul li a:hover {
-    background-color: #eee;
-}
 
 nav ul li a:hover,
 input[type="submit"]:hover,
 .link-item:hover {
-    background-color: var(--accent-color);
+    background-color: var(--accent-color-light);
     color: #fff;
 }
 
@@ -195,7 +197,8 @@ footer>div>p {
     white-space: nowrap;
 }
 
-footer a {
+footer a,
+footer a:hover {
     color: #fff;
     text-decoration: underline;
 }
