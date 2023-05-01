@@ -252,19 +252,16 @@ footer a:hover {
     vertical-align: middle;
 }
 
-ul.my-decoration li {
+ul.decoration li {
     position: relative;
     padding-left: 25px;
     margin-bottom: 15px;
 }
 
 ul.decoration li:before {
-    content: "";
+    content: "✿";
     position: absolute;
     top: 0;
     left: 0;
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
     background-color: var(--accent-color-light);
 }
