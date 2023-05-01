@@ -154,7 +154,7 @@
     </div>
   </footer>
   <script>
-    let app = new Vue({
+    let app1 = new Vue({
       el: "#links",
       data: {
         links: [],
@@ -165,6 +165,16 @@
           .get("json/links.json")
           .then(response => (this.links = response.data))
           .catch(error => console.log(error))
+      }
+    });
+
+    let app2 = new Vue({
+      el: "#hobby",
+      data: {
+        links: [],
+        hobbies: [],
+      },
+      mounted() {
         axios
           .get("json/hobbies.json")
           .then(response => (this.hobbies = response.data))
