@@ -17,12 +17,37 @@ body {
 }
 
 blockquote {
-    background-color: #f7f7f7;
-    border-left: 10px solid #ccc;
-    margin: 1.5em 10px;
-    padding: 0.5em 10px;
+    position: relative;
+    padding: 10px 15px 10px 50px;
+    box-sizing: border-box;
     font-style: italic;
-    white-space: pre-wrap;
+    border: solid 2px #464646;
+    color: #464646;
+}
+
+blockquote:before{
+    display: inline-block;
+    position: absolute;
+    top: 10px;
+    left: 0;
+    content: "“";
+    font-family: sans-serif;
+    color: #77c0c9;
+    font-size: 90px;
+    line-height: 1;
+}
+
+blockquote p {
+    padding: 0;
+    margin: 10px 0;
+    line-height: 1.7;
+}
+
+blockquote cite {
+    display: block;
+    text-align: right;
+    color: #888888;
+    font-size: 0.9em;
 }
 
 ul {
