@@ -25,7 +25,7 @@ jobs:
           command: npx htmlhint ./**/*.html
       - run:
           name: JavaScript syntax check
-          command: npx eslint ./**/*.js
+          command: npx eslint ./**/*.js --config .eslintrc.js
           env:
             - "NODE_OPTIONS=--require eslint-plugin-jquery"
       - run:

@@ -5,6 +5,8 @@ env:
   jquery: true
 extends: eslint:recommended
 overrides: []
+ignorePatterns:
+  - 'docs/assets/js/lightgallery.min.js'
 parserOptions:
   ecmaVersion: latest
   sourceType: module
