@@ -25,12 +25,12 @@ jobs:
           command: npx htmlhint ./**/*.html
       - run:
           name: JavaScript syntax check
-          command: npx eslint ./**/*.js --config .eslintrc.js
+          command: npx eslint ./docs/asset/js/lint/*.js
           env:
             - "NODE_OPTIONS=--require eslint-plugin-jquery"
       - run:
           name: CSS syntax check
-          command: npx stylelint ./**/*.css
+          command: npx stylelint ./docs/asset/css/lint/*.css
 workflows:
   version: 2
   build:

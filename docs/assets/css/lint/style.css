@@ -24,7 +24,7 @@ blockquote {
     border: solid 5px #e4e4e4;
     color: #464646;
     margin-bottom: 32px;
-    background-image: url('../icon/blockquote_icon_s.png');
+    background-image: url('../../icon/blockquote_icon_s.png');
     background-repeat: no-repeat;
 }
 
