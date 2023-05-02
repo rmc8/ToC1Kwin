@@ -1101,7 +1101,7 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
 }
 
 .lg-backdrop.in {
-    opacity: 1;
+    opacity: 0.78;
 }
 
 .lg-css3.lg-no-trans .lg-prev-slide,
