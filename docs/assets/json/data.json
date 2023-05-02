@@ -1,0 +1,178 @@
+{
+  "twibo": [
+    {
+      "event_type": "マラソンイベ",
+      "text": "おまかせ(選曲○)【{room_number}】＠４<br>主：36万/{leader_skill}%　募：☆４<br>#プロセカ募集 #プロセカ協力<br>"
+    },
+    {
+      "event_type": "チアフルイベ",
+      "text": "{team_name}【{room_number}】＠４<br>主：36万/{leader_skill}%　募：☆４<br>#プロセカ募集 #プロセカ協力<br>"
+    }
+  ],
+  "units": [
+    {
+      "talent": "36.3",
+      "leader_skill": "150",
+      "total_skills": "690",
+      "note": "(P1)"
+    },
+    {
+      "talent": "33.0",
+      "leader_skill": "150",
+      "total_skills": "730",
+      "note": "(P1, L1)"
+    },
+    {
+      "talent": "19.3",
+      "leader_skill": "150",
+      "total_skills": "680",
+      "note": ""
+    },
+    {
+      "talent": "19.3",
+      "leader_skill": "100",
+      "total_skills": "650",
+      "note": "(回復リーダースキルマ)"
+    }
+  ],
+  "winning_streak_record": [
+    {
+      "group_name": "金魚",
+      "team_name": "株式会社スイミーグループ",
+      "winning_streak_num": "1120"
+    },
+    {
+      "group_name": "しょうゆ",
+      "team_name": "fantasista",
+      "winning_streak_num": "816"
+    },
+    {
+      "group_name": "みどりぷよ",
+      "team_name": "fantasista",
+      "winning_streak_num": "500"
+    },
+    {
+      "group_name": "サッカー",
+      "team_name": "浅瀬を遊泳中のニモ",
+      "winning_streak_num": "456"
+    },
+    {
+      "group_name": "しっとりした曲",
+      "team_name": "もういちど希望をみんなに！",
+      "winning_streak_num": "399"
+    },
+    {
+      "group_name": "山",
+      "team_name": "Quintet",
+      "winning_streak_num": "350"
+    },
+    {
+      "group_name": "金魚",
+      "team_name": "株式会社スイミーグループ",
+      "winning_streak_num": "319"
+    },
+    {
+      "group_name": "金魚",
+      "team_name": "株式会社スイミーグループ",
+      "winning_streak_num": "307"
+    },
+    {
+      "group_name": "お化け屋敷",
+      "team_name": "歌うよ！",
+      "winning_streak_num": "302"
+    },
+    {
+      "group_name": "ミルク",
+      "team_name": "ミルタンクが倒せない",
+      "winning_streak_num": "301"
+    }
+  ],
+  "event_rankings": [
+    {
+      "event_name": "青空に願うユア・ハピネス！",
+      "value": "4位"
+    },
+    {
+      "event_name": "MOREMOREMakingXmas",
+      "value": "5位"
+    },
+    {
+      "event_name": "POP IN MY HEART!!",
+      "value": "13位"
+    },
+    {
+      "event_name": "ハッピー・ラブリー・エブリデイ！",
+      "value": "23位"
+    },
+    {
+      "event_name": "Legend still vivid",
+      "value": "32位"
+    },
+    {
+      "event_name": "Walk on and on",
+      "value": "43位"
+    },
+    {
+      "event_name": "Cast Spell on You",
+      "value": "62位"
+    },
+    {
+      "event_name": "お悩み聞かせて！わくわくピクニック",
+      "value": "72位"
+    },
+    {
+      "event_name": "TOP200~TOP1000",
+      "value": "22回"
+    }
+  ],
+  "hobbies": [
+    {
+      "title": "Coffee",
+      "description": "自宅で豆を焼いて挽いて飲むぐらいにはコーヒーが好きです。苦みや酸味・甘味・香りのバランスを考えて焼いたり、ブレンドして味のバランスを整えたり、いれ方を変えて味変したりで意外と奥が深いです。豆を選ぶ瞬間からコーヒーの楽しみが広がっていて長いこと楽しんでいます。メインはコーヒーですがお茶も好きで紅茶・緑茶・ブレンドなど国内外を問わずにいろいろと取り寄せて楽しんでいます。"
+    },
+    {
+      "title": "Stationery",
+      "description": "長時間の勉強や書写が好きで文房具にこっています。万年筆やガラスペンが好きでインク集めて勉強だったり趣味だったりでのんびり文字を書いています。ちなみに文字を書くときは左利きです。手から伝わる滑らかな感触やインクの色・匂い、文字や絵から得られる刺激や知識がいつまで経っても飽きないですし、実用性もあるので気に入っている趣味の1つです。"
+    },
+    {
+      "title": "Programming",
+      "description": "プログラムを書くのが好きで、Discord用のBotも作っています。得意な言語はPythonで、他にもHTMLやJavaScript、Rustなどもお遊び程度に使っています。お仕事でもプログラムを書いていて簡単なWebアプリの構築やデータ分析、学習モデルの構築、めんどくさい作業の自動化とかとても好きです。お仕事以外だとGoogle Apps Scriptでもよく遊んでいます。Discordでプログラミングをする開発鯖もあるのでご興味のある方はぜひお声がけください。"
+    },
+    {
+      "title": "Audio",
+      "description": "一番長く続いている趣味だと思います。イヤホン・ヘッドホン・スピーカーとなんでも好きで、イヤホン自体をつくったり、アンプやケーブルを作ったりしながら音響システム全体の音を整えていくのがいつまでたっても終わりがなく楽しめます。音楽を聴くこと自体もとても楽しいですが、1つの音楽でも音や音楽の表現が変わって何度聞いても楽しい気持ちになれます。とても長く続けていても新しい発見が音楽にも機材側にもでてくるので手をかけることがやめられません。"
+    },
+    {
+      "title": "Fragrance",
+      "description": "コーヒーと同様に匂いが好きなので意外とハマっている趣味です。といいつつご存じの通り香水は匂いやクセが強いものもあって私自身もそのあたりのものだったり、電車で遠くからも香るような強烈な感じだったりは得意ではないです。なので、やわらかく瑞々しく香る傾向のあるアクアディパルマの製品に好みが偏りがちです。"
+    }
+  ],
+  "ilinks": [
+    {
+      "text": "Cheerful Bingo Card",
+      "url": "cheerful_bingo/"
+    }
+  ],
+  "elinks": [
+    {
+      "label": "@ToC1Kwin",
+      "url": "https://twitter.com/ToC1Kwin",
+      "icon": "https://abs.twimg.com/favicons/twitter.ico"
+    },
+    {
+      "label": "@rmc_km",
+      "url": "https://twitter.com/rmc_km",
+      "icon": "https://abs.twimg.com/favicons/twitter.ico"
+    },
+    {
+      "label": "GitHub",
+      "url": "https://github.com/rmc8/",
+      "icon": "https://github.githubassets.com/favicon.ico"
+    },
+    {
+      "label": "note",
+      "url": "https://note.com/toc1kwin",
+      "icon": "https://assets.st-note.com/poc-image/manual/note-common-images/production/svg/production.ico"
+    }
+  ]
+}

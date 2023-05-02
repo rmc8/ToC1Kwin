@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>K (@Toc1Kwin)'s profile</title>
+    <style>
+        @media only screen and (max-width: 767px) {
+            #gallery img {
+                max-width: 50%;
+            }
+        }
+
+        @media only screen and (min-width: 768px) {
+            #gallery img {
+                max-width: 33%;
+            }
+        }
+    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/style.css" />
+    <link rel="stylesheet" href="../assets/css/lightgallery.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="icon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../assets/icon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../assets/icon/favicon-16x16.png">
+    <link rel="manifest" href="../assets/icon/site.webmanifest">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lightgallery/dist/js/lightgallery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lg-thumbnail/dist/lg-thumbnail.min.js"></script>
+    <script src="../assets/js/script.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <header>
+            <div class="container">
+                <!-- <h1>Profile</h1> -->
+                <nav>
+                    <a class="home_link" href=".."
+                        style="font-size: 20px; display: flex;flex-direction: column;justify-content: center;align-items: center;">
+                        <img src="../assets/icon/home.png" width="32" height="32" style="margin-top:8px"> Home
+                    </a>
+                </nav>
+            </div>
+        </header>
+        <main>
+            <section id="profile">
+                <div class="profile-icon">
+                    <img src="../assets/icon/twi.jpg" class="twitter_icon" alt="TwitterIcon">
+                </div>
+                <h2 class="user_name">K</h2>
+                <p><img src="../assets/icon/discord-mark-blue-icon.png" alt="DiscordIcon"
+                        class="discord_icon">うみつばめ#3333</p>
+            </section>
+            <section id="bingo">
+                <div class="container" id="lightgallery_images">
+                    <h2>Cheerful Bingo</h2>
+                    <p>
+                        チアフルイベント用のビンゴカードがランダムで6種類表示されます。ご自由にご活用ください！
+                    </p>
+                    <div id="gallery" class="row">
+                        <a v-for="image in images" :href="image">
+                            <img :src="image" :alt="image" class="gallery-item" />
+                        </a>
+                    </div>
+                </div>
+            </section>
+            <section id="link">
+                <div class="container">
+                    <h2>Link</h2>
+                    <div class="links">
+                        <a v-for="link in contents.elinks" :href="link.url" target="_blank" rel="noopener noreferrer"
+                            class="link">
+                            <div class="icon" :style="`background-image: url('${link.icon}')`"></div>
+                            <div class="label">{{ link.label }}</div>
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <footer>
+            <div class="container">
+                <p>&copy; K(@ToC1Kwin) 2023 | <a href="https://github.com/rmc8/ToC1Kwin">Repository</a></p>
+            </div>
+        </footer>
+    </div>
+    <script src="../assets/js/lightgallery.min.js"></script>
+    <script type="text/javascript">
+        lightGallery(document.getElementById('lightgallery_images')); 
+    </script>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                images: [],
+                contents: {},
+            },
+            created() {
+                const numbers = new Set();
+                while (numbers.size < 6) {
+                    numbers.add(Math.floor(Math.random() * 1000) + 1);
+                }
+                for (const number of numbers) {
+                    const paddedNumber = String(number).padStart(4, '0');
+                    const imagePath = `./img/bingo_${paddedNumber}.png`;
+                    this.images.push(imagePath);
+                }
+            },
+            mounted() {
+                // LightGalleryの初期化
+                $("#gallery").lightGallery({
+                    thumbnail: true,
+                    animateThumb: false,
+                    showThumbByDefault: false,
+                    thumbMargin: 10,
+                    thumbWidth: 100,
+                    thumbHeight: 100,
+                });
+                axios
+                    .get("../assets/json/data.json")
+                    .then(response => (this.contents = response.data))
+                    .catch(error => console.log(error))
+            },
+            methods: {
+                // srcsetを生成するためのメソッド
+                getSrcset(image) {
+                    return `${image} 628w, ${image.replace('628.png', '1256.png')} 1256w, ${image.replace('628.png', '1884.png')} 1884w`;
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>

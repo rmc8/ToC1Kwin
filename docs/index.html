@@ -8,15 +8,15 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="assets/css/style.css" />
   <link rel="apple-touch-icon" sizes="180x180" href="icon/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="icon/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="icon/favicon-16x16.png">
-  <link rel="manifest" href="icon/site.webmanifest">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/icon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/icon/favicon-16x16.png">
+  <link rel="manifest" href="assets/icon/site.webmanifest">
   <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script src="js/script.js"></script>
+  <script src="assets/js/script.js"></script>
 </head>
 
 <body>
@@ -37,10 +37,10 @@
     <main>
       <section id="profile">
         <div class="profile-icon">
-          <img src="icon/twi.jpg" class="twitter_icon" alt="TwitterIcon">
+          <img src="assets/icon/twi.jpg" class="twitter_icon" alt="TwitterIcon">
         </div>
         <h2 class="user_name">K</h2>
-        <p><img src="icon/discord-mark-blue-icon.png" alt="DiscordIcon" class="discord_icon">うみつばめ#3333</p>
+        <p><img src="assets/icon/discord-mark-blue-icon.png" alt="DiscordIcon" class="discord_icon">うみつばめ#3333</p>
       </section>
       <section id="about">
         <div class="container">
@@ -80,8 +80,9 @@
               <p>
                 チアフルカーニバルイベントで固定メンバーやツイ募などでまったり連勝しています。1000連勝以上を目指した大型連勝も14か月しており1120連勝まで歩みを進められました。これからもツイボで色々な方々と連勝しながらときどき大型も楽しみたいです。以下は300連勝以上の記録です。
               <ul class="decoration" id="winning_streak_record">
-                <li v-for="rec in contents.winning_streak_record">{{ rec.group_name }}グループ「{{ rec.team_name }}」{{
-                  rec.winning_streak_num }}連勝</li>
+                <li v-for="rec in contents.winning_streak_record">
+                  {{ rec.group_name }}グループ「{{ rec.team_name }}」{{ rec.winning_streak_num }}連勝
+                </li>
               </ul>
               </p>
             </li>
@@ -116,8 +117,15 @@
       <section id="link">
         <div class="container">
           <h2>Link</h2>
+          <h3 style="font-size:1.7rem;padding-bottom:24px;">Internal</h3>
+          <ul class="decoration">
+            <li v-for="link in contents.ilinks">
+              <a :href="link.url" target="_blank" rel="noopener noreferrer">{{ link.text }}</a>
+            </li>
+          </ul>
+          <h3 style="font-size:1.7rem;padding-bottom:24px;">External</h3>
           <div class="links">
-            <a v-for="link in contents.links" :href="link.url" target="_blank" rel="noopener noreferrer" class="link">
+            <a v-for="link in contents.elinks" :href="link.url" target="_blank" rel="noopener noreferrer" class="link">
               <div class="icon" :style="`background-image: url('${link.icon}')`"></div>
               <div class="label">{{ link.label }}</div>
             </a>
@@ -138,7 +146,7 @@
         },
         mounted() {
           axios
-            .get("json/data.json")
+            .get("assets/json/data.json")
             .then(response => (this.contents = response.data))
             .catch(error => console.log(error))
         }

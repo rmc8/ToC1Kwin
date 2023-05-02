@@ -1,0 +1,303 @@
+:root {
+    --accent-color_dark: #0c323c;
+    --accent-color-light: #24aab3;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Noto Sans JP', sans-serif;
+    line-height: 1.6;
+    color: #2b2b2b;
+    background-color: #fbfbfb;
+}
+
+blockquote {
+    position: relative;
+    padding: 88px 16px 16px 24px;
+    box-sizing: border-box;
+    font-style: italic;
+    border: solid 5px #e4e4e4;
+    color: #464646;
+    margin-bottom: 32px;
+    background-image: url('../icon/blockquote_icon_s.png');
+    background-repeat: no-repeat;
+}
+
+blockquote p {
+    padding: 0;
+    margin: 10px 0;
+    line-height: 1.7;
+}
+
+blockquote cite {
+    display: block;
+    text-align: right;
+    color: #888888;
+    font-size: 0.9em;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: var(--accent-color-light);
+}
+
+a:hover {
+    color: var(--accent-color-dark);
+}
+
+a.home_link,
+a.home_link:hover {
+    color: var(--accent-color-light);
+}
+
+header {
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+nav ul {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 50px;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li:first-child {
+    margin-left: 0;
+}
+
+nav ul li a {
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: background-color 0.2s ease-in-out;
+    color: var(--text-color);
+}
+
+
+nav ul li a:hover,
+input[type="submit"]:hover,
+.link-item:hover {
+    background-color: var(--accent-color-light);
+    color: #fff;
+}
+
+main {
+    margin-top: 100px;
+}
+
+section {
+    padding: 56px 0;
+}
+
+h2 {
+    font-size: 2.4rem;
+    margin-bottom: 40px;
+}
+
+h4 {
+    font-size: 1.6em;
+    margin-bottom: 10px;
+}
+
+p {
+    font-size: 1.2rem;
+    margin-bottom: 32px;
+}
+
+ul li h3 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+}
+
+ul li p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+form {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 40px;
+}
+
+label {
+    display: block;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+input,
+textarea {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin-bottom: 20px;
+    font-size: 1.2rem;
+}
+
+input[type="submit"] {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+}
+
+input[type="submit"]:hover {
+    background-color: #555;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+footer>div>p {
+    font-size: 1.0rem;
+}
+
+.link-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+}
+
+.link-item {
+    background-color: #f7f7f7;
+    border-radius: 5px;
+    color: #333;
+    display: block;
+    margin: 10px;
+    padding: 15px;
+    text-align: center;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.link-item:hover {
+    background-color: #333;
+    color: #f7f7f7;
+}
+
+.links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+.link {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 4px;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.label {
+    white-space: nowrap;
+}
+
+footer a,
+footer a:hover {
+    color: #fff;
+    text-decoration: underline;
+}
+
+#profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+#profile img.twitter_icon {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+#profile h2.user_name {
+    font-size: 24px;
+    font-weight: 500;
+    margin: 0;
+}
+
+#profile p {
+    font-size: 18px;
+    margin: 0;
+}
+
+.profile-icon {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 5px;
+}
+
+.discord_icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 2px;
+    margin-bottom: 2px;
+    object-fit: contain;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+ul.decoration {
+    padding-top: 16px;
+    padding-bottom: 16px;
+}
+
+ul.decoration li {
+    position: relative;
+    padding-left: 24px;
+    margin-bottom: 16px;
+    margin-left: 24px;
+}
+
+ul.decoration li:before {
+    content: "✿";
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: var(--accent-color-light);
+}
