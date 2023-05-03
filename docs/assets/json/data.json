@@ -149,6 +149,10 @@
   ],
   "ilinks": [
     {
+      "text": "独りんぼエンヴィーポイント計算",
+      "url": "event_point_calculator"
+    },
+    {
       "text": "Cheerful Bingo Card",
       "url": "cheerful_bingo/"
     }
