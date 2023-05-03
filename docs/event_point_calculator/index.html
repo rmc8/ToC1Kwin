@@ -92,7 +92,7 @@
         }
 
         .pagination {
-            padding-top: 32px;
+            padding-bottom: 24px;
         }
     </style>
 </head>
@@ -134,6 +134,11 @@
                         <div class="result">
                             <div v-show="errorMessage" class="error">{{ errorMessage }}</div>
                             <div v-show="!errorMessage">
+                                <div v-if="pageCount > 1" class="pagination">
+                                    <button v-for="page in pageCount" :key="page"
+                                        :class="{ active: page === currentPage }" @click="changePage(page)">{{ page
+                                        }}</button>
+                                </div>
                                 <table>
                                     <thead>
                                         <tr>
@@ -152,11 +157,6 @@
                                         </tr>
                                     </tbody>
                                 </table>
-                                <div v-if="pageCount > 1" class="pagination">
-                                    <button v-for="page in pageCount" :key="page"
-                                        :class="{ active: page === currentPage }" @click="changePage(page)">{{ page
-                                        }}</button>
-                                </div>
                             </div>
                         </div>
                     </div>
