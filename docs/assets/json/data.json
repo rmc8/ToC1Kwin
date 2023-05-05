@@ -1,4 +1,10 @@
 {
+  "profile": {
+    "name": "K",
+    "icon_path": "./assets/icon/twi.jpg",
+    "discord_icon": "./assets/icon/discord-mark-blue-icon.png",
+    "discord_id": "うみつばめ#3333"
+  },
   "twibo": [
     {
       "event_type": "マラソンイベ",
@@ -155,6 +161,10 @@
     {
       "text": "Cheerful Bingo Card",
       "url": "cheerful_bingo/"
+    },
+    {
+      "text": "チアフル連勝ランキング",
+      "url": "cheerful_winning_streak_ranking/"
     }
   ],
   "elinks": [
