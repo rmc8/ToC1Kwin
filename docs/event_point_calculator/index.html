@@ -33,37 +33,9 @@
     <script src="../assets/js/lint/script.js"></script>
     <style>
         table {
-            border-collapse: collapse;
             max-width: 400px;
-            width: auto;
-            background-color: #fff;
         }
-
-        th,
-        td {
-            text-align: left;
-            padding: 8px;
-        }
-
-        th {
-            background-color: #24aab3;
-            color: white;
-            text-align: center;
-        }
-
-        tr {
-            background-color: transparent;
-        }
-
-        tr:nth-child(even) {
-            background-color: #edfcfd;
-        }
-
-
-        tr:hover {
-            background-color: #ddd;
-        }
-
+        
         .error {
             color: #822;
             font-weight: bold;
@@ -113,11 +85,10 @@
         <main>
             <section id="profile">
                 <div class="profile-icon">
-                    <img src="../assets/icon/twi.jpg" class="twitter_icon" alt="TwitterIcon">
+                    <img :src="`.${contents.profile.icon_path}`" class="twitter_icon" alt="TwitterIcon">
                 </div>
-                <h2 class="user_name">K</h2>
-                <p><img src="../assets/icon/discord-mark-blue-icon.png" alt="DiscordIcon"
-                        class="discord_icon">うみつばめ#3333</p>
+                <h2 class="user_name">{{ contents.profile.name }}</h2>
+                <p><img :src="`.${contents.profile.discord_icon}`" alt="DiscordIcon" class="discord_icon">{{ contents.profile.discord_id }}</p>
             </section>
             <section id="calc">
                 <div class="container">

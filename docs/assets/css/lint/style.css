@@ -118,6 +118,11 @@ h2 {
     margin-bottom: 40px;
 }
 
+h3 {
+    font-size: 1.9rem;
+    margin-bottom: 30px;
+}
+
 h4 {
     font-size: 1.6em;
     margin-bottom: 10px;
@@ -182,6 +187,37 @@ footer {
 
 footer>div>p {
     font-size: 1.0rem;
+}
+
+table {
+    border-collapse: collapse;
+    width: auto;
+    background-color: #fff;
+}
+
+th,
+td {
+    text-align: left;
+    padding: 8px;
+}
+
+th {
+    background-color: #24aab3;
+    color: white;
+    text-align: center;
+}
+
+tr {
+    background-color: transparent;
+}
+
+tr:nth-child(even) {
+    background-color: #edfcfd;
+}
+
+
+tr:hover {
+    background-color: #f2f2f2;
 }
 
 .link-list {
