@@ -18,14 +18,21 @@
         content="https://raw.githubusercontent.com/rmc8/ToC1Kwin/main/docs/assets/icon/eyecatch.jpg" />
     <title>K(@ToC1Kwin) - Cheerful Bingo</title>
     <style>
+        #gallery {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .bingo_card img{
+            width: 100%;
+        }
         @media only screen and (max-width: 767px) {
-            #gallery img {
+            .bingo_card {
                 max-width: 50%;
             }
         }
 
         @media only screen and (min-width: 768px) {
-            #gallery img {
+            .bingo_card {
                 max-width: 33%;
             }
         }
@@ -66,7 +73,8 @@
                     <img :src="`.${contents.profile.icon_path}`" class="twitter_icon" alt="TwitterIcon">
                 </div>
                 <h2 class="user_name">{{ contents.profile.name }}</h2>
-                <p><img :src="`.${contents.profile.discord_icon}`" alt="DiscordIcon" class="discord_icon">{{ contents.profile.discord_id }}</p>
+                <p><img :src="`.${contents.profile.discord_icon}`" alt="DiscordIcon" class="discord_icon">{{
+                    contents.profile.discord_id }}</p>
             </section>
             <section id="bingo">
                 <div class="container" id="lightgallery_images">
@@ -74,10 +82,16 @@
                     <p>
                         チアフルイベント用のビンゴカードがランダムで6種類表示されます。ご自由にご活用ください！
                     </p>
-                    <div id="gallery" class="row">
-                        <a v-for="image in images" :href="image">
-                            <img :src="image" :alt="image" class="gallery-item" />
-                        </a>
+                    <div id="gallery">
+                        <div class="bingo_card" v-for="image in images">
+                            <a :href="image.replace('.png', '.webp')">
+                                <picture>
+                                    <source type="image/webp" :srcset="image.replace('.png', '.webp')" />
+                                    <source type="image/png" :srcset="image" />
+                                    <img :src="image" :alt="image" class="gallery-item" />
+                                </picture>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -101,9 +115,13 @@
         </footer>
     </div>
     <script src="../assets/js/lightgallery.min.js"></script>
+    <!-- 
     <script type="text/javascript">
-        lightGallery(document.getElementById('lightgallery_images')); 
+        $(document).ready(function () {
+            $('#gallery').lightGallery();
+        });
     </script>
+    -->
     <script>
         new Vue({
             el: '#app',
@@ -118,7 +136,7 @@
                 }
                 for (const number of numbers) {
                     const paddedNumber = String(number).padStart(4, '0');
-                    const imagePath = `./img/bingo_${paddedNumber}.png`;
+                    const imagePath = `./img/bingo_${paddedNumber}.webp`;
                     this.images.push(imagePath);
                 }
             },
@@ -140,7 +158,7 @@
             methods: {
                 // srcsetを生成するためのメソッド
                 getSrcset(image) {
-                    return `${image} 628w, ${image.replace('628.png', '1256.png')} 1256w, ${image.replace('628.png', '1884.png')} 1884w`;
+                    return `${image} 628w, ${image.replace('628.webp', '1256.webp')} 1256w, ${image.replace('628.webp', '1884.webp')} 1884w`;
                 }
             }
         });
