@@ -165,12 +165,21 @@
     {
       "text": "チアフル連勝ランキング",
       "url": "cheerful_winning_streak_ranking/"
+    },
+    {
+      "text": "楽曲データベース",
+      "url": "prsk_music_database/"
     }
   ],
   "elinks": [
     {
       "label": "@ToC1Kwin",
       "url": "https://twitter.com/ToC1Kwin",
+      "icon": "https://abs.twimg.com/favicons/twitter.ico"
+    },
+    {
+      "label": "@CheerfulWinsRnk",
+      "url": "https://twitter.com/CheerfulWinsRnk",
       "icon": "https://abs.twimg.com/favicons/twitter.ico"
     },
     {
