@@ -12,6 +12,10 @@
   <link rel="apple-touch-icon" sizes="180x180" href="icon/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="assets/icon/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="assets/icon/favicon-16x16.png">
+  <meta name="twitter:image"
+    content="https://raw.githubusercontent.com/rmc8/ToC1Kwin/main/docs/assets/icon/eyecatch.jpg" />
+  <meta property="og:image"
+    content="https://raw.githubusercontent.com/rmc8/ToC1Kwin/main/docs/assets/icon/eyecatch.jpg" />
   <link rel="manifest" href="assets/icon/site.webmanifest">
   <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
@@ -40,7 +44,8 @@
           <img :src="contents.profile.icon_path" class="twitter_icon" alt="TwitterIcon">
         </div>
         <h2 class="user_name">{{ contents.profile.name }}</h2>
-        <p><img :src="contents.profile.discord_icon" alt="DiscordIcon" class="discord_icon">{{ contents.profile.discord_id }}</p>
+        <p><img :src="contents.profile.discord_icon" alt="DiscordIcon" class="discord_icon">{{
+          contents.profile.discord_id }}</p>
       </section>
       <section id="about">
         <div class="container">
