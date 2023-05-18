@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@ToC1Kwin" />
+    <meta name="twitter:creator" content="@ToC1Kwin" />
+    <meta name="twitter:title" content="プロセカ楽曲効率" />
+    <meta name="twitter:description" content="プロセカの楽曲効率を簡単にまとめた表です。" />
+    <meta property="og:url" content="https://rmc8.github.io/ToC1Kwin/cheerful_winning_streak_ranking/" />
+    <meta property="og:title" content="プロセカ楽曲効率" />
+    <meta property="og:description" content="プロセカの楽曲効率を簡単にまとめた表です。" />
+    <meta name="twitter:image"
+        content="https://raw.githubusercontent.com/rmc8/ToC1Kwin/main/docs/assets/icon/eyecatch.jpg" />
+    <meta property="og:image"
+        content="https://raw.githubusercontent.com/rmc8/ToC1Kwin/main/docs/assets/icon/eyecatch.jpg" />
+    <title>K(@ToC1Kwin) - プロセカ楽曲効率</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/lint/style.css" />
+    <link rel="apple-touch-icon" sizes="180x180" href="icon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../assets/icon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../assets/icon/favicon-16x16.png">
+    <link rel="manifest" href="../assets/icon/site.webmanifest">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="../assets/js/lint/script.js"></script>
+    <style>
+        div.table-container {
+            overflow-x: auto;
+        }
+
+        th {
+            background-color: #24aab3;
+            color: white;
+            text-align: center;
+        }
+
+        tbody tr {
+            /* border-bottom: 1px dotted #ddd; */
+        }
+
+        td.N,
+        td.Y {
+            font-size: 13px;
+            font-weight: bold;
+        }
+
+        td.N {
+            background-color: #0088ff22;
+        }
+
+        td.Y {
+            background-color: #ff4a5222;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <header>
+            <div class="container">
+                <!-- <h1>Profile</h1> -->
+                <nav>
+                    <a class="home_link" href=".."
+                        style="font-size: 20px; display: flex;flex-direction: column;justify-content: center;align-items: center;">
+                        <img src="../assets/icon/home.png" width="32" height="32" style="margin-top:8px"> Home
+                    </a>
+                </nav>
+            </div>
+        </header>
+        <main>
+            <section id="profile">
+                <div class="profile-icon">
+                    <img :src="`.${contents.profile.icon_path}`" class="twitter_icon" alt="TwitterIcon">
+                </div>
+                <h2 class="user_name">{{ contents.profile.name }}</h2>
+                <p><img :src="`.${contents.profile.discord_icon}`" alt="DiscordIcon" class="discord_icon">{{
+                    contents.profile.discord_id }}</p>
+            </section>
+            <section id="efficiency">
+                <div class="container">
+                    <h2>プロセカ楽曲効率</h2>
+                    <p>
+                        プロセカ楽曲の効率表です。Expertで出せるスコアを100%としたときに同じ楽曲で異なる難易度のスコア効率が良いか悪いかを表に表します。低難易度でもスコアが落ちにくいもの・高難易度でスコアが伸びやすいものが「Y」、スコアが伸びにくい楽曲は「N」、標準的な効率であれば記載なしの書式で表に効率を掲載しております。
+                    </p>
+                    <p>
+                        低難易度はスキルの影響を強く受けやすいため、スキルずれが起こりづらくスキル効果を巻き込みやすい1枠で活用することを推奨します。またMasterはだいたいの曲はAPをだしておけばスコアがExpertわずかに伸びる曲も多いので「N」判定は厳しめにつけています。1000連勝以上を狙うなど長時間ハイスコアをだし続けるための周回では高難易度の回避にご活用ください。<br>
+                    </p>
+                    <p>
+                        また一部でMasterやExpertよりもHard以下がスコアが出やすい曲があったり、高難易度と同等のスコアが出る曲があったりします。しかしながら、基本的にはチアフルイベランでライフを残しつつイベントポイント（スコア）を稼ぐ用途で使うことが望ましく、連勝や討伐で厳しくスコアを求める場面の場合には表をうのみにするだけではなく自分なりに目的を持って検証して、正しい理解の下で難易度の判断ができるようにお願いいたします。
+                    </p>
+                    <p>
+                    </p>
+                    <h3>楽曲効率表</h3>
+                    <div id="loading-spinner" v-if="loading">
+                        <i class="fas fa-spinner fa-spin"></i>
+                        <p>Loading...</p>
+                    </div>
+                    <div class="eficiency_table" v-if="!loading">
+                        <div class="table-container">
+                            <table>
+                                <caption style="display:none;">Simple efficiency table for prsk music</caption>
+                                <thead>
+                                    <tr>
+                                        <th>{{ columns.NAME }}</th>
+                                        <th style="width:80px;">{{ columns.Easy }}</th>
+                                        <th style="width:80px;">{{ columns.Normal }}</th>
+                                        <th style="width:80px;">{{ columns.Hard }}</th>
+                                        <th style="width:80px;">{{ columns.Master }}</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr v-for="(music, index) in data">
+                                        <td>{{ music.NAME }}</td>
+                                        <td :class="music.Easy" style="text-align:center;">{{ music.Easy }}</td>
+                                        <td :class="music.Normal" style="text-align:center;">{{ music.Normal }}</td>
+                                        <td :class="music.Hard" style="text-align:center;">{{ music.Hard }}</td>
+                                        <td :class="music.Master" 　style="text-align:center;">{{ music.Master }}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id="link">
+                <div class="container">
+                    <h2>Link</h2>
+                    <div class="links">
+                        <a v-for="link in contents.elinks" :href="link.url" target="_blank" rel="noopener noreferrer"
+                            class="link">
+                            <div class="icon" :style="`background-image: url('${link.icon}')`"></div>
+                            <div class="label">{{ link.label }}</div>
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <footer>
+            <div class="container">
+                <p>&copy; K(@ToC1Kwin) 2023 | <a href="https://github.com/rmc8/ToC1Kwin">Repository</a></p>
+            </div>
+        </footer>
+    </div>
+    <script>
+        let app = new Vue({
+            el: "#app",
+            data: {
+                contents: {},
+                columns: {},
+                data: [],
+                loading: true
+            },
+            mounted() {
+                axios
+                    .get("../assets/json/data.json")
+                    .then(response => (this.contents = response.data))
+                    .catch(error => console.log(error))
+                axios.get(
+                    'https://script.google.com/macros/s/AKfycbyRqBREk3ZYTOzvkuw_ZdnG28U__c-64VeXweDP-5PnMjpzuhrf1QIgBbByCTl1xPqO/exec'
+                ).then(
+                    response => {
+                        this.columns = response.data.columns;
+                        this.data = response.data.data;
+                        this.loading = false;
+                    },
+                )
+            }
+        });
+    </script>
+</body>
+
+</html>
