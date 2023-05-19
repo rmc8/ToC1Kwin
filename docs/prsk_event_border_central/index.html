@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta property="og:url" content="https://rmc8.github.io/ToC1Kwin/prsk_event_border_central/" />
+    <meta name="twitter:site" content="@ToC1Kwin" />
+    <meta name="twitter:creator" content="@ToC1Kwin" />
+    <meta name="twitter:title" content="プロセカイベントボーダー" />
+    <meta property="og:title" content="プロセカイベントボーダー" />
+    <meta property="og:description" content="プロセカのイベントのボーダーをまとめたページです。" />
+    <meta name="twitter:description" content="プロセカのイベントのボーダーをまとめたページです。" />
+    <meta name="twitter:image"
+        content="https://raw.githubusercontent.com/rmc8/ToC1Kwin/main/docs/assets/icon/eyecatch.jpg" />
+    <meta property="og:image"
+        content="https://raw.githubusercontent.com/rmc8/ToC1Kwin/main/docs/assets/icon/eyecatch.jpg" />
+    <title>K(@ToC1Kwin) - プロセカイベントボーダー</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/lint/style.css" />
+    <link rel="apple-touch-icon" sizes="180x180" href="icon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../assets/icon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../assets/icon/favicon-16x16.png">
+    <link rel="manifest" href="../assets/icon/site.webmanifest">
+    <link rel="stylesheet" href="https://unpkg.com/vue-select@latest/dist/vue-select.css">
+    <script src="https://unpkg.com/vue-select@latest"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script src="../assets/js/lint/script.js"></script>
+    <style>
+        div.table-container {
+            overflow-x: auto;
+            max-height: 500px;
+            position: relative;
+        }
+
+        table {
+            width: 100%;
+            table-layout: fixed;
+        }
+
+        thead th {
+            position: sticky;
+            top: 0;
+            background-color: #24aab3;
+            color: white;
+            text-align: center;
+            z-index: 2;
+        }
+
+        tbody {
+            overflow-y: scroll;
+            scrollbar-width: thin;
+            scrollbar-color: #bdbdbd transparent;
+        }
+
+        tbody::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        tbody::-webkit-scrollbar-thumb {
+            background-color: #bdbdbd;
+            border-radius: 4px;
+        }
+
+        /* ---- menu ---- */
+        .event_menu {
+            margin-bottom: 24px;
+        }
+
+        .v-select {
+            width: 360px;
+        }
+
+        .vs__search {
+            width: 100%;
+            border-radius: 4px;
+            padding: 10px;
+            font-size: 16px;
+            background-color: #fff;
+            outline: none;
+        }
+
+        /* メニューオプション */
+        .vs__dropdown-menu {
+            width: 100%;
+            border: 1px solid #ccc;
+            border-top: none;
+            border-radius: 0 0 4px 4px;
+            background-color: #fff;
+            z-index: 9999;
+            max-height: 400px;
+            overflow-y: auto;
+        }
+
+        /* 選択したオプションのスタイル */
+        .vs__selected-options {
+            border: none;
+            background-color: transparent;
+        }
+
+        /* メニューオプションのホバースタイル */
+        .vs__dropdown-menu .vs__dropdown-item:hover {
+            background-color: #f5f5f5;
+            color: #333;
+        }
+
+        /* ---- chart ---- */
+        div.chart-container {
+            height: 600px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <header>
+            <div class="container">
+                <!-- <h1>Profile</h1> -->
+                <nav>
+                    <a class="home_link" href=".."
+                        style="font-size: 20px; display: flex;flex-direction: column;justify-content: center;align-items: center;">
+                        <img src="../assets/icon/home.png" width="32" height="32" style="margin-top:8px"> Home
+                    </a>
+                </nav>
+            </div>
+        </header>
+        <main>
+            <section id="profile">
+                <div class="profile-icon">
+                    <img :src="`.${contents.profile.icon_path}`" class="twitter_icon" alt="TwitterIcon">
+                </div>
+                <h2 class="user_name">{{ contents.profile.name }}</h2>
+                <p><img :src="`.${contents.profile.discord_icon}`" alt="DiscordIcon" class="discord_icon">{{
+                    contents.profile.discord_id }}</p>
+            </section>
+            <section id="border_central">
+                <div class="container">
+                    <h2>プロセカイベントボーダー</h2>
+                    <p>「雨上がりの一番星」から「ほどかれた糸のその先に」までのイベントにおけるランキングボーダー（1位～TOP100）をまとめました。稼働や炊き数の計画の参考にしていただけますと幸いです。下記の項目にあるセレクトメニューからイベントを選択すると、該当イベントのイベントポイントの推移のグラフと詳細の表が表示されます。</p>
+                    <h3>イベント</h3>
+                    <div class="event_menu">
+                        <v-select name="event_select" :options="eventOptions" v-model="selectedEvent"
+                            placeholder="イベントを選択してください" @input="selectEvent(selectedEvent)">
+                        </v-select>
+                    </div>
+                    <div v-if="selectedEventId">
+                        <h3>チャート</h3>
+                        <div class="chart-container">
+                            <div id="chart"></div>
+                        </div>
+
+                        <h3>ボーダー推移表</h3>
+                        <div class="border_table">
+                            <div class="table-container">
+                                <table>
+                                    <caption style="display:none;">Simple efficiency table for prsk music</caption>
+                                    <thead>
+                                        <tr>
+                                            <th>{{ columns.datetime }}
+                                            </th>
+                                            <th>{{ columns.first }}</th>
+                                            <th>{{ columns.second }}</th>
+                                            <th>{{ columns.third }}</th>
+                                            <th>{{ columns.top10 }}</th>
+                                            <th>{{ columns.top20 }}</th>
+                                            <th>{{ columns.top30 }}</th>
+                                            <th>{{ columns.top40 }}</th>
+                                            <th>{{ columns.top50 }}</th>
+                                            <th>{{ columns.top100 }}</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr v-for="record in fetchBorderData()">
+                                            <td>{{ record.datetime }}</td>
+                                            <td style="text-align:right;">{{ record.first | formatNumber }}</td>
+                                            <td style="text-align:right;">{{ record.second | formatNumber }}</td>
+                                            <td style="text-align:right;">{{ record.third | formatNumber }}</td>
+                                            <td style="text-align:right;">{{ record.top10 | formatNumber }}</td>
+                                            <td style="text-align:right;">{{ record.top20 | formatNumber }}</td>
+                                            <td style="text-align:right;">{{ record.top30 | formatNumber }}</td>
+                                            <td style="text-align:right;">{{ record.top40 | formatNumber }}</td>
+                                            <td style="text-align:right;">{{ record.top50 | formatNumber }}</td>
+                                            <td style="text-align:right;">{{ record.top100 | formatNumber }}</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id="link">
+                <div class="container">
+                    <h2>Link</h2>
+                    <div class="links">
+                        <a v-for="link in contents.elinks" :href="link.url" target="_blank" rel="noopener noreferrer"
+                            class="link">
+                            <div class="icon" :style="`background-image: url('${link.icon}')`"></div>
+                            <div class="label">{{ link.label }}</div>
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <footer>
+            <div class="container">
+                <p>&copy; K(@ToC1Kwin) 2023 | <a href="https://github.com/rmc8/ToC1Kwin">Repository</a></p>
+            </div>
+        </footer>
+    </div>
+    <script>
+        Vue.component('v-select', VueSelect.VueSelect);
+        Vue.filter('formatNumber', function (value) {
+            if (!value) return '0';
+            return value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+        });
+
+        let app = new Vue({
+            el: "#app",
+            data: {
+                contents: {},
+                columns: {},
+                eventOptions: [],
+                border: {},
+                selectedEvent: "",
+                selectedEventName: "",
+                selectedEventId: "",
+                extractedData: [],
+            },
+            mounted() {
+                axios
+                    .get("../assets/json/data.json")
+                    .then((response) => {
+                        this.contents = response.data;
+                    })
+                    .catch((error) => console.log(error));
+                axios
+                    .get("./data/event_border.json")
+                    .then((response) => {
+                        this.columns = response.data.columns;
+                        this.eventOptions = response.data.event_name;
+                        this.border = response.data.border;
+                    })
+                    .catch((error) => console.log(error));
+            },
+            methods: {
+                selectEvent(selectedOption) {
+                    if (selectedOption.value === null) {
+                        return;
+                    }
+                    this.selectedEventName = selectedOption.label;
+                    this.selectedEventId = selectedOption.value;
+                },
+                fetchBorderData() {
+                    this.extractedData = this.border[this.selectedEventId];
+                    return this.extractedData;
+                },
+            },
+            watch: {
+                extractedData: function () {
+                    Vue.nextTick(() => {
+                        const chartData = [
+                            {
+                                x: this.extractedData.map((record) => record.datetime),
+                                y: this.extractedData.map((record) => record.first),
+                                mode: 'lines',
+                                name: '1st',
+                                line: {
+                                    color: '#24aab3 ',
+                                }
+                            },
+                            {
+                                x: this.extractedData.map((record) => record.datetime),
+                                y: this.extractedData.map((record) => record.second),
+                                mode: 'lines',
+                                name: '2nd',
+                                line: {
+                                    color: '#ff6384',
+                                }
+                            },
+                            {
+                                x: this.extractedData.map((record) => record.datetime),
+                                y: this.extractedData.map((record) => record.third),
+                                mode: 'lines',
+                                name: '3rd',
+                                line: {
+                                    color: '#4285f4',
+                                }
+                            },
+                            {
+                                x: this.extractedData.map((record) => record.datetime),
+                                y: this.extractedData.map((record) => record.top10),
+                                mode: 'lines',
+                                name: 'Top10',
+                                line: {
+                                    color: '#ea4335',
+                                }
+                            },
+                            {
+                                x: this.extractedData.map((record) => record.datetime),
+                                y: this.extractedData.map((record) => record.top20),
+                                mode: 'lines',
+                                name: 'Top20',
+                                line: {
+                                    color: '#fbbc04',
+                                }
+                            },
+                            {
+                                x: this.extractedData.map((record) => record.datetime),
+                                y: this.extractedData.map((record) => record.top30),
+                                mode: 'lines',
+                                name: 'Top30',
+                                line: {
+                                    color: '#34a853',
+                                }
+                            },
+                            {
+                                x: this.extractedData.map((record) => record.datetime),
+                                y: this.extractedData.map((record) => record.top40),
+                                mode: 'lines',
+                                name: 'Top40',
+                                line: {
+                                    color: '#4285f4',
+                                }
+                            },
+                            {
+                                x: this.extractedData.map((record) => record.datetime),
+                                y: this.extractedData.map((record) => record.top50),
+                                mode: 'lines',
+                                name: 'Top50',
+                                line: {
+                                    color: '#f07b72',
+                                }
+                            },
+                            {
+                                x: this.extractedData.map((record) => record.datetime),
+                                y: this.extractedData.map((record) => record.top100),
+                                mode: 'lines',
+                                name: 'Top100',
+                                line: {
+                                    color: '#c646ac',
+                                }
+                            },
+                        ];
+
+                        const layout = {
+                            height: 560,
+                            title: {
+                                text: this.selectedEventName,
+                                font: {
+                                    size: 24,
+                                },
+                            },
+                            xaxis: {
+                                title: 'Datetime',
+                                showgrid: false,
+                            },
+                            yaxis: {
+                                title: 'EventPoint',
+                                standoff: 100,
+                                showgrid: false,
+                                // tickformat: ',d',
+                            },
+                            legend: {
+                                x: 0.5,
+                                y: -0.3,
+                                xanchor: 'center',
+                                yanchor: 'top',
+                                orientation: 'h'
+                            },
+                        };
+
+                        Plotly.newPlot('chart', chartData, layout);
+                    });
+                },
+            },
+        });
+    </script>
+</body>
+
+</html>
