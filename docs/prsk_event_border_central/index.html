@@ -40,6 +40,8 @@
         }
 
         table {
+            font-size: 13px;
+            min-width: 984px;
             width: 100%;
             table-layout: fixed;
         }
@@ -142,7 +144,8 @@
             <section id="border_central">
                 <div class="container">
                     <h2>プロセカイベントボーダー</h2>
-                    <p>「雨上がりの一番星」から「ほどかれた糸のその先に」までのイベントにおけるランキングボーダー（1位～TOP100）をまとめました。稼働や炊き数の計画の参考にしていただけますと幸いです。下記の項目にあるセレクトメニューからイベントを選択すると、該当イベントのイベントポイントの推移のグラフと詳細の表が表示されます。</p>
+                    <p>「雨上がりの一番星」から「ほどかれた糸のその先に」までのイベントにおけるランキングボーダー（1位～TOP100）をまとめました。稼働や炊き数の計画の参考にしていただけますと幸いです。下記の項目にあるセレクトメニューからイベントを選択すると、該当イベントのイベントポイントの推移のグラフと詳細の表が表示されます。
+                    </p>
                     <h3>イベント</h3>
                     <div class="event_menu">
                         <v-select name="event_select" :options="eventOptions" v-model="selectedEvent"
@@ -162,17 +165,17 @@
                                     <caption style="display:none;">Simple efficiency table for prsk music</caption>
                                     <thead>
                                         <tr>
-                                            <th>{{ columns.datetime }}
+                                            <th style="width:136px;">{{ columns.datetime }}
                                             </th>
-                                            <th>{{ columns.first }}</th>
-                                            <th>{{ columns.second }}</th>
-                                            <th>{{ columns.third }}</th>
-                                            <th>{{ columns.top10 }}</th>
-                                            <th>{{ columns.top20 }}</th>
-                                            <th>{{ columns.top30 }}</th>
-                                            <th>{{ columns.top40 }}</th>
-                                            <th>{{ columns.top50 }}</th>
-                                            <th>{{ columns.top100 }}</th>
+                                            <th style="width:88px;">{{ columns.first }}</th>
+                                            <th style="width:88px;">{{ columns.second }}</th>
+                                            <th style="width:88px;">{{ columns.third }}</th>
+                                            <th style="width:88px;">{{ columns.top10 }}</th>
+                                            <th style="width:88px;">{{ columns.top20 }}</th>
+                                            <th style="width:88px;">{{ columns.top30 }}</th>
+                                            <th style="width:88px;">{{ columns.top40 }}</th>
+                                            <th style="width:88px;">{{ columns.top50 }}</th>
+                                            <th style="width:88px;">{{ columns.top100 }}</th>
                                         </tr>
                                     </thead>
                                     <tbody>
