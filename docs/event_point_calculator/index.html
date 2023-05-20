@@ -5,15 +5,15 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="twitter:card" content="summary_large_image" />
+    <meta property="og:url" content="https://rmc8.github.io/ToC1Kwin/event_point_calculator" />
     <meta name="twitter:site" content="@ToC1Kwin" />
     <meta name="twitter:creator" content="@ToC1Kwin" />
+    <meta property="og:title" content="独りんぼエンヴィーイベントポイント計算機" />
     <meta name="twitter:title" content="独りんぼエンヴィーイベントポイント計算機" />
+    <meta property="og:description" content="独りんぼエンヴィーでのイベントポイントの調整のための計算をします。" />
     <meta name="twitter:description" content="独りんぼエンヴィーでのイベントポイントの調整のための計算をします。" />
     <meta name="twitter:image"
         content="https://raw.githubusercontent.com/rmc8/ToC1Kwin/main/docs/assets/icon/eyecatch.jpg" />
-    <meta property="og:url" content="https://rmc8.github.io/ToC1Kwin/event_point_calculator" />
-    <meta property="og:title" content="独りんぼエンヴィーイベントポイント計算機" />
-    <meta property="og:description" content="独りんぼエンヴィーでのイベントポイントの調整のための計算をします。" />
     <meta property="og:image"
         content="https://raw.githubusercontent.com/rmc8/ToC1Kwin/main/docs/assets/icon/eyecatch.jpg" />
     <title>K(@ToC1Kwin) - 独りんぼエンヴィーイベントポイント計算機</title>
@@ -35,7 +35,7 @@
         table {
             max-width: 400px;
         }
-        
+
         .error {
             color: #822;
             font-weight: bold;
@@ -88,7 +88,8 @@
                     <img :src="`.${contents.profile.icon_path}`" class="twitter_icon" alt="TwitterIcon">
                 </div>
                 <h2 class="user_name">{{ contents.profile.name }}</h2>
-                <p><img :src="`.${contents.profile.discord_icon}`" alt="DiscordIcon" class="discord_icon">{{ contents.profile.discord_id }}</p>
+                <p><img :src="`.${contents.profile.discord_icon}`" alt="DiscordIcon" class="discord_icon">{{
+                    contents.profile.discord_id }}</p>
             </section>
             <section id="calc">
                 <div class="container">

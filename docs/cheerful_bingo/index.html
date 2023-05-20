@@ -8,12 +8,12 @@
     <meta name="twitter:site" content="@ToC1Kwin" />
     <meta name="twitter:creator" content="@ToC1Kwin" />
     <meta name="twitter:title" content="Cheerful Bingo" />
+    <meta property="og:title" content="Cheerful Bingo" />
+    <meta property="og:url" content="https://rmc8.github.io/ToC1Kwin/cheerful_bingo/" />
     <meta name="twitter:description" content="プロセカのチアフルイベント用にビンゴカードをランダムで配布するページです。" />
+    <meta property="og:description" content="プロセカのチアフルイベント用にビンゴカードをランダムで配布するページです。" />
     <meta name="twitter:image"
         content="https://raw.githubusercontent.com/rmc8/ToC1Kwin/main/docs/assets/icon/eyecatch.jpg" />
-    <meta property="og:url" content="https://rmc8.github.io/ToC1Kwin/cheerful_bingo/" />
-    <meta property="og:title" content="Cheerful Bingo" />
-    <meta property="og:description" content="プロセカのチアフルイベント用にビンゴカードをランダムで配布するページです。" />
     <meta property="og:image"
         content="https://raw.githubusercontent.com/rmc8/ToC1Kwin/main/docs/assets/icon/eyecatch.jpg" />
     <title>K(@ToC1Kwin) - Cheerful Bingo</title>
@@ -22,9 +22,11 @@
             display: flex;
             flex-wrap: wrap;
         }
-        .bingo_card img{
+
+        .bingo_card img {
             width: 100%;
         }
+
         @media only screen and (max-width: 767px) {
             .bingo_card {
                 max-width: 50%;
@@ -141,7 +143,6 @@
                 }
             },
             mounted() {
-                // LightGalleryの初期化
                 $("#gallery").lightGallery({
                     thumbnail: true,
                     animateThumb: false,
@@ -156,7 +157,6 @@
                     .catch(error => console.log(error))
             },
             methods: {
-                // srcsetを生成するためのメソッド
                 getSrcset(image) {
                     return `${image} 628w, ${image.replace('628.webp', '1256.webp')} 1256w, ${image.replace('628.webp', '1884.webp')} 1884w`;
                 }
