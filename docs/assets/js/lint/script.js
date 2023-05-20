@@ -14,20 +14,17 @@ $(function () {
   });
 });
 
-/* ---   ---*/
-// head要素を取得します
+/*
 let head = document.getElementsByTagName("head")[0];
 
-// 追加する各タグを作成して、head要素に追加します
-
 let tags = [
-  {
-    name: "meta",
-    attributes: {
-      name: "google-site-verification",
-      content: "wPpgindvtwVOOeQCpIIgEVZNvi-qlc6bC-i3lqNyUt0",
-    },
-  },
+  //  {
+  //    name: "meta",
+  //    attributes: {
+  //      name: "google-site-verification",
+  //      content: "wPpgindvtwVOOeQCpIIgEVZNvi-qlc6bC-i3lqNyUt0",
+  //    },
+  //  },
 ];
 
 tags.forEach(function (tag) {
@@ -37,3 +34,4 @@ tags.forEach(function (tag) {
   }
   head.appendChild(element);
 });
+*/
