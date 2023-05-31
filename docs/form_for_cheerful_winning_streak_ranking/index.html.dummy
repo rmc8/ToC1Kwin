@@ -5,14 +5,18 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@ToC1Kwin" />
-    <meta name="twitter:creator" content="@ToC1Kwin" />
-    <meta name="twitter:title" content="K (@Toc1Kwin)'s profile" />
-    <meta property="og:title" content="K (@Toc1Kwin)'s profile" />
-    <meta property="og:url" content="https://rmc8.github.io/ToC1Kwin/cheerful_bingo/" />
-    <meta name="twitter:description" content="K (@Toc1Kwin)'s profile" />
-    <meta property="og:description" content="K (@Toc1Kwin)'s profile" />
-  <title>K (@Toc1Kwin)'s profile</title>
+  <meta name="twitter:site" content="@ToC1Kwin" />
+  <meta name="twitter:creator" content="@ToC1Kwin" />
+  <meta property="og:title" content="[申請フォーム]チアフル連勝ランキング" />
+  <meta name="twitter:title" content="[申請フォーム]チアフル連勝ランキング" />
+  <meta property="og:description" content="チアフルイベントの連勝のランキングの掲載のための申請フォームです。" />
+  <meta name="twitter:description" content="チアフルイベントの連勝のランキングの掲載のための申請フォームです。" />
+  <meta name="twitter:image"
+        content="https://raw.githubusercontent.com/rmc8/ToC1Kwin/main/docs/cheerful_winning_streak_ranking/img/cheerful_eyecatch.jpg" />
+    <meta property="og:url" content="https://rmc8.github.io/ToC1Kwin/cheerful_winning_streak_ranking/" />
+    <meta property="og:image"
+        content="https://raw.githubusercontent.com/rmc8/ToC1Kwin/main/docs/cheerful_winning_streak_ranking/img/cheerful_eyecatch.jpg" />
+  <title>K (@Toc1Kwin) - ［申請フォーム］チアフル連勝ランキング</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500&display=swap" rel="stylesheet">
@@ -25,9 +29,9 @@
   <meta property="og:image"
     content="https://raw.githubusercontent.com/rmc8/ToC1Kwin/main/docs/assets/icon/eyecatch.jpg" />
   <link rel="manifest" href="assets/icon/site.webmanifest">
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="assets/js/lint/script.js"></script>
   <meta name="google-site-verification" content="wPpgindvtwVOOeQCpIIgEVZNvi-qlc6bC-i3lqNyUt0" />
 </head>

@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@ToC1Kwin" />
+  <meta name="twitter:creator" content="@ToC1Kwin" />
+  <meta property="og:title" content="プロセカタグ検索クエリ集" />
+  <meta name="twitter:title" content="プロセカタグ検索クエリ集" />
+  <meta property="og:description" content="プロセカのタグ検索のクエリを掲載したページです。" />
+  <meta name="twitter:description" content="プロセカのタグ検索のクエリを掲載したページです。" />
+  <meta name="twitter:image"
+    content="https://raw.githubusercontent.com/rmc8/ToC1Kwin/main/docs/cheerful_winning_streak_ranking/img/cheerful_eyecatch.jpg" />
+  <meta property="og:url" content="https://rmc8.github.io/ToC1Kwin/cheerful_winning_streak_ranking/" />
+  <meta property="og:image"
+    content="https://raw.githubusercontent.com/rmc8/ToC1Kwin/main/docs/cheerful_winning_streak_ranking/img/cheerful_eyecatch.jpg" />
+  <title>K (@Toc1Kwin) - プロセカタグ検索クエリ集</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/lint/style.css" />
+  <link rel="apple-touch-icon" sizes="180x180" href="icon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/icon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../assets/icon/favicon-16x16.png">
+  <link rel="manifest" href="../assets/icon/site.webmanifest">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="../assets/js/lint/script.js"></script>
+  <meta name="google-site-verification" content="wPpgindvtwVOOeQCpIIgEVZNvi-qlc6bC-i3lqNyUt0" />
+  <style>
+    .query-section {
+      border: 4px solid #0aadb966;
+      border-radius: 8px;
+      padding: 10px;
+      margin-bottom: 48px;
+    }
+
+    .query-section h3 {
+      margin-bottom: 10px;
+      font-size: 28px;
+      margin-left: 2px;
+    }
+
+    .query-input-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .query-section p {
+      margin-bottom: 8px;
+    }
+
+    .query-input-container input {
+      flex-grow: 1;
+      border: 1px solid #ccc;
+      padding: 5px 10px;
+      flex: 1 0 auto;
+      min-width: 100px;
+      margin-bottom: 10px;
+    }
+
+    .query-input-container button {
+      background-color: #0aadb9;
+      color: #fff;
+      font-weight: bold;
+      border-radius: 4px;
+      border: none;
+      padding: 5px 10px;
+      cursor: pointer;
+      height: 34px;
+      cursor: pointer;
+      flex: 0 1 100%;
+      margin-top: 0px;
+    }
+
+    .query-input-container button:hover {
+      background-color: #078b89;
+    }
+
+    .query-section a {
+      margin-left: 2px;
+      margin-top: 32px;
+      margin-bottom: 4px;
+      display: block;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="app">
+    <header>
+      <div class="container">
+        <!-- <h1>Profile</h1> -->
+        <nav>
+          <a class="home_link" href=".."
+            style="font-size: 20px; display: flex;flex-direction: column;justify-content: center;align-items: center;">
+            <img src="../assets/icon/home.png" width="32" height="32" style="margin-top:8px"> Home
+          </a>
+        </nav>
+      </div>
+    </header>
+    <main>
+      <section id="profile">
+        <div class="profile-icon">
+          <img :src="`.${contents.profile.icon_path}`" class="twitter_icon" alt="TwitterIcon">
+        </div>
+        <h2 class="user_name">{{ contents.profile.name }}</h2>
+        <p><img :src="`.${contents.profile.discord_icon}`" alt="DiscordIcon" class="discord_icon">{{
+          contents.profile.discord_id }}</p>
+      </section>
+      <section id="about">
+        <div class="container">
+          <h2>About</h2>
+          <p>
+            はじめまして。{{ contents.profile.name }}と申します。プロセカでおまかせしたり連勝したりすることが好きです。スタンプ押しながらまったりご一緒できましたらうれしいです！
+          </p>
+        </div>
+      </section>
+      <section id="query_collection">
+        <div class="container">
+          <h2>クエリ集</h2>
+          <p>Twitterの検索用のクエリをまとめました。日頃のイベント周回やおまかせ、チアフルなどに対応しています。</p>
+          <query-section v-for="(query, index) in queries" :key="index" :title="query.title" :query="query.query"
+            :description="query.description"></query-section>
+        </div>
+      </section>
+      <section id="link">
+        <div class="container">
+            <h2>Link</h2>
+            <div class="links">
+                <a v-for="link in contents.elinks" :href="link.url" target="_blank" rel="noopener noreferrer"
+                    class="link">
+                    <div class="icon" :style="`background-image: url('${link.icon}')`"></div>
+                    <div class="label">{{ link.label }}</div>
+                </a>
+            </div>
+        </div>
+    </section>
+    </main>
+    <footer>
+      <div class="container">
+        <p>&copy; K(@ToC1Kwin) 2023 | <a href="https://github.com/rmc8/ToC1Kwin">Repository</a></p>
+      </div>
+    </footer>
+  </div>
+  <template id="query-section-template">
+    <div class="query-section">
+      <h3>{{ title }}</h3>
+      <div class="query-input-container">
+        <input type="text" v-model="query" readonly />
+        <button v-on:click="copyQuery">Copy</button>
+      </div>
+      <a :href="`https://twitter.com/search?q=${encodeURIComponent(query)}`" target="_blank">Twitterで検索</a>
+      <p>{{ description }}</p>
+    </div>
+  </template>
+  <script>
+    Vue.component('query-section', {
+      template: '#query-section-template',
+      props: ['title', 'query', 'description'],
+      methods: {
+        copyQuery() {
+          navigator.clipboard.writeText(this.query)
+            .then(() => alert('クエリがコピーされました'))
+            .catch(err => alert('クエリのコピーに失敗しました: ', err));
+        },
+      }
+    });
+    let app = new Vue({
+      el: "#app",
+      data: {
+        contents: {},
+        queries: [
+          {
+            "title": "すべての募集を検索する",
+            "query": "#プロセカ募集 OR #プロセカ協力",
+            "description": "すべてのプロセカの募集を検索します。"
+          },
+          {
+            "title": "独りんぼエンヴィー周回を検索する",
+            "query": "(#プロセカ募集 OR #プロセカ協力) (えび OR エンヴィー OR 🦐)",
+            "description": "イベラン用に独りんぼエンヴィー周回を検索します。"
+          },
+          {
+            "title": "ロストエンファウンド周回を検索する",
+            "query": "(#プロセカ募集 OR #プロセカ協力) (ロスエン OR ロストエンファウンド )",
+            "description": "ロストエンファウンド周回を検索します。"
+          },
+          {
+            "title": "おまかせ系の周回を検索する",
+            "query": "(#プロセカ募集 OR #プロセカ協力) (おまかせ OR 選曲自由 OR 選曲○ OR 選曲⭕️)",
+            "description": "ロストエンファウンド周回を検索します。"
+          },
+          {
+            "title": "フォローしている方の周回を検索する",
+            "query": "（#プロセカ募集 OR #プロセカ協力) filter:follows",
+            "description": "フォローしている方のツイ募に絞って検索します。"
+          },
+          {
+            "title": "チアフルの所属グループの募集を検索する",
+            "query": "（#プロセカ募集 OR #プロセカ協力) (ケーキカット OR 🍰 OR 🎂 OR 🔪)",
+            "description": "チアフルで所属しているグループに絞って検索しています。ここではケーキカットグループを例にしています。"
+          },
+          {
+            "title": "チアフルで所属していないグループを除外して募集を検索する",
+            "query": "（#プロセカ募集 OR #プロセカ協力) -(ブーケトス OR 💐)",
+            "description": "チアフルで相手チームを除外して検索します。所属グループの募集とそのほか鯖ラン募集や併せなどのチアフル外の募集を見られます。所属グループのフィルターがうまくいかない場合にも有効です。"
+          },
+          {
+            "title": "チアフル連勝関係の募集を検索する",
+            "query": "（#プロセカ募集 OR #プロセカ協力) (連勝 OR 討伐 OR パトロール OR つよい人 OR 強い人)",
+            "description": "連勝関連の募集を検索します。たまによくわからない恐い募集方法をされている方もいらっしゃるのでうまいこと調整してください。"
+          }
+        ]
+      },
+      methods: {
+        copyQuery(query) {
+          navigator.clipboard.writeText(query)
+            .then(() => alert('クエリがコピーされました'))
+            .catch(err => alert('クエリのコピーに失敗しました: ', err));
+        },
+      },
+      mounted() {
+        axios
+          .get("../assets/json/data.json")
+          .then(response => {
+            this.contents = response.data;
+          })
+          .catch(error => console.log(error));
+      }
+    });
+  </script>
+</body>
+
+</html>
