@@ -208,6 +208,11 @@
       "label": "note",
       "url": "https://note.com/toc1kwin",
       "icon": "https://assets.st-note.com/poc-image/manual/note-common-images/production/svg/production.ico"
+    },
+    {
+      "label": "WishList",
+      "url": "https://www.amazon.jp/hz/wishlist/ls/EFSY7JHYBP5K?ref_=wl_share",
+      "icon": "https://raw.githubusercontent.com/rmc8/rmc_km/main/docs/assets/icon/amznlogo.png"
     }
   ]
 }
