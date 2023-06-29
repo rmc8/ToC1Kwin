@@ -200,15 +200,26 @@
       "icon": "https://abs.twimg.com/favicons/twitter.ico"
     },
     {
-      "label": "GitHub",
-      "url": "https://github.com/rmc8/",
-      "icon": "https://github.githubassets.com/favicon.ico"
+      "label": "Blog",
+      "url": "https://rmc-8.com",
+      "icon": "https://raw.githubusercontent.com/rmc8/rmc_km/main/docs/assets/icon/scriptone_logo_icon.ico"
     },
     {
       "label": "note",
       "url": "https://note.com/toc1kwin",
       "icon": "https://assets.st-note.com/poc-image/manual/note-common-images/production/svg/production.ico"
     },
+    {
+      "label": "Zenn",
+      "url": "https://zenn.dev/km",
+      "icon": "https://zenn.dev/images/logo-transparent.png"
+    },
+    {
+      "label": "GitHub",
+      "url": "https://github.com/rmc8/",
+      "icon": "https://github.githubassets.com/favicon.ico"
+    },
+
     {
       "label": "WishList",
       "url": "https://www.amazon.jp/hz/wishlist/ls/EFSY7JHYBP5K?ref_=wl_share",
