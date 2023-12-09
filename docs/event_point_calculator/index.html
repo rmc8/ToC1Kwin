@@ -95,43 +95,8 @@
             <section id="calc">
                 <div class="container">
                     <h2>Event Point Calculator</h2>
-                    <p>
-                        独りんぼエンヴィーでのイベントポイントの調整のための計算をします。炊きありの場合には小数点の切り捨ての関係で誤差が出る場合がありますため、最終的な調整は0炊きでお願いいたします。
-                    </p>
-                    <div class="calculator" style="padding-top:32px">
-                        <div class="form">
-                            <label>獲得したいイベントポイントを数値で入力してください</label>
-                            <input type="number" v-model="inputNumber" />
-                            <button @click="search()" style="display:none">計算</button>
-                        </div>
-                        <div class="result">
-                            <div v-show="errorMessage" class="error">{{ errorMessage }}</div>
-                            <div v-show="!errorMessage">
-                                <div v-if="pageCount > 1" class="pagination">
-                                    <button v-for="page in pageCount" :key="page"
-                                        :class="{ active: page === currentPage }" @click="changePage(page)">{{ page
-                                        }}</button>
-                                </div>
-                                <table>
-                                    <thead>
-                                        <tr>
-                                            <th style="line-height:16px; width:88px">イベントボーナス</th>
-                                            <th style="width:80px">炊き数</th>
-                                            <th>スコア下限</th>
-                                            <th>スコア上限</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr v-for="(data, index) in currentData" :key="index">
-                                            <td style="text-align:right;">{{ data[0] }}</td>
-                                            <td style="text-align:center;">{{ data[1] }}</td>
-                                            <td style="text-align:right;">{{ data[2] }}</td>
-                                            <td style="text-align:right;">{{ data[3] }}</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
+                    <div class="alert alert-warning" role="alert">
+                      <p>最新版のイベントポイント計算機は<a href="https://rmc-8.com/ToC1Kwin/event_point_calculator">https://rmc-8.com/ToC1Kwin/event_point_calculator</a>で提供しております。今後はこちらをご利用ください。</p>
                     </div>
                 </div>
             </section>
